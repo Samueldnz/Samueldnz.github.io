@@ -150,6 +150,22 @@ main img.pequena{
     margin: auto;
 }
 
+div.video{
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 59%;
+    position: relative;
+}
+
+div.video > iframe{
+    position: absolute;
+    top: 5%; /*distancia entre a linha top do video e a linha top da div*/  
+    left: 5%; /*distancia entre a linha left do video e a linha left da div*/
+    width: 90%;
+    height: 90%;
+}
+
 aside{
     background-color: var(--cor1);
     padding: 10px;
