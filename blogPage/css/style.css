@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'Android';
-    src: url('../fonts/idroid.otf') format('opentype');
+    src: url('../fontes/idroid.otf')format('opentype');
     font-weight: normal;
 }
 
@@ -59,8 +59,8 @@ header > p{
     max-width: 500px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 30px;
     margin: auto;
-    margin-bottom: 30px;
     color: white;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.315);
 }
@@ -137,7 +137,7 @@ main a{
 
 main a:hover{
     text-decoration: underline;
-    color:var(--cor4);
+    color: var(--cor4);
 }
 
 main img{
@@ -158,7 +158,7 @@ div.video{
     position: relative;
 }
 
-div.video > iframe{
+div.video > iframe {
     position: absolute;
     top: 5%; /*distancia entre a linha top do video e a linha top da div*/  
     left: 5%; /*distancia entre a linha left do video e a linha left da div*/
