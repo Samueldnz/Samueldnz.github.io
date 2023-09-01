@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Site</title>
+    <link rel="shortcut icon" href="chama.ico" type="image/x-icon">
+
+    <style>
+        
+        .nav-container 
+        {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+        .nav-bar 
+        {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+            background-color: black;
+            box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.192);
+            height: 5vh;
+        }
+
+        .nav-list 
+        {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-list p{
+            letter-spacing: 1.5px;
+            color: white;
+        }
+
+        .nav-list a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-list a:hover{
+            text-decoration: underline;
+        }
+
+        main{
+            max-width: 800px;
+            min-width: 300px;
+            margin: auto;
+            margin-bottom: 30px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
+            background-color: white;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        main a{
+            text-decoration: none;
+            color: black;
+            background-color: #ccc;
+        }
+
+        main a:hover{
+            text-decoration: underline;
+            color: blue;
+            
+        }
+
+        main p{
+            margin: 15px 0px;
+            text-align: justify;
+            text-indent: 30px;
+            line-height: 2em;
+            font-size: 1em;
+        }
+
+        main h2{
+            font-size: 1.7em;
+        }
+
+        main img{
+            width: 100%;
+            height: 500px;
+        }
+
+        #title h1{
+            font-size: 3em;
+            margin: 0;
+        }   
+
+        #title p{
+            font-size: 1em;
+            margin: 0;
+        }
+        
+        #mephisto div, #one-above-all div{
+            text-align: center;
+        }
+
+        .secundary-image{
+            width: 50%;
+            height: 50%;
+        }
+
+        aside{
+            background-color: #ccc;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.28);
+        }
+
+        aside h3{
+            font-size: 1.4em;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            margin: -10px -10px 0px -10px; 
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        article div{
+            margin: 10px 0px;
+            text-align: center;
+        }
+
+        aside p {
+            margin: 0;
+        }
+
+        .aside-image{
+            width: 75%;
+            height: 75%;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+
+        footer{
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 0.8em;
+            padding: 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a{
+            color: white;
+            font-weight: bolder;
+            text-decoration: none;
+        }
+
+        footer a:hover{
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <nav class="nav-bar">
+            <a class="logo" href=""><img src="./assets/midia/logo-remove-200.png" alt="Logo"></a>
+
+            <div class="nav-list">
+                <p><strong><a href="https://github.com/Samueldnz"><em>Samuel Sampaio Diniz</em></a> - DRE:122076523</strong></p>
+            </div>    
+        </nav>
+    </div>
+
+    <main>
+        <div id="title">
+            <h1>Marvel Heroes</h1>
+            <p><em>The 15<sup>th</sup> most powerful <strong><a href="https://meiobit.com/413587/os-15-personagens-mais-poderosos-da-marvel/">Marvel Heroes!</a></strong></em></p>
+            <hr>
+        </div>
+
+        <section>
+            <div>
+                <h2>14. Hulk</h2>
+                <div class="picture"><img src="https://files.meiobit.com/wp-content/uploads/2019/10/20191025hulk.jpg" alt="Hulk"></div>
+                <p>Forget the MCU's Hulk, he's totally nerfed. In the comics, the Hulk's strength is basically limitless, and the angrier he is, the stronger he gets. Banner's subconscious is one of the great limiters, preventing the Hulk from using his full potential. When he's in irrational mode, or extremely angry, it gets. In Secret Wars he held up an entire mountain. In World War Hulk he was capable of destroying entire planets.</p>
+            </div>
+            <div>
+                <h2>13. Thanos</h2>
+                <div><img src="https://files.meiobit.com/wp-content/uploads/2019/10/20191024thanos2.jpg" alt="Thanos"></div>
+                <p>Thanos, the Mad Titan is basically immortal, a much more powerful mutant than the other Eternals, he has superhuman strength, shoots energy beams, survives without eating, sleeping or breathing and is a brilliant strategist. A formidable enemy even without the Infinity Gauntlet, Thanos is in love with Death and wants to destroy the Universe to honor his beloved. His biggest enemy is himself, Thanos always ends up sabotaging himself.</p>
+            </div>
+            <div>
+                <h2>12. Odin</h2>
+                <div><img src="https://files.meiobit.com/wp-content/uploads/2019/10/201910245525953-1493498345-55259.png" alt="Odin"></div>
+                <p>The All-Father, patriarch of Asgard, Odin is pure power, blurring the lines between aliens and gods. Immortal, Odin has strength rivaled by few, combined with wisdom and strategic ability. When necessary, Odin accesses the Odinforce, an energy field with which Odin is able to destroy entire galaxies, create life, stop time and even face Galactus on equal terms.</p>    
+            </div>
+            <div>
+                <h2>11. Celestials</h2>
+                <div><img src="https://files.meiobit.com/wp-content/uploads/2019/10/20191024celestials_wip_by_uncannyknack_dct5dbv-fullview.jpg" alt="Celestiais"></div>
+                <p>Were the gods astronauts? In the Marvel Universe the answer is yes. The Celestials are cosmic entities created at the dawn of the Universe, themselves capable of creating other worlds and universes. They roamed the Universe modifying worlds, seeding life, destroying species with no future and interfering in the History of civilizations. On Earth they altered Evolution, splitting proto-humans into Eternals, Deviants and Homo Sapiens.</p>
+            </div>
+            <div>
+                <h2>10. Galactus</h2>
+                <div><img src="https://files.meiobit.com/wp-content/uploads/2019/10/20191024g3-1024x778.jpg" alt="Galactus"></div>
+                <p>Galactus was once Galan, a scientist dissatisfied with the imminent end of his Universe. Unable to stop the Big Crunch, Galan witnessed the end of his Universe, but in the last moments his consciousness merged with the Universal Consciousness, formed by all the entities that had lived in that Universe. Then occurred the Big Bang, which gave rise to our Universe, Galactus was dormant for billions of years, until he hatched from his cosmic egg, and began to devour planets in search of their vital energy.</p>
+                <p>Galactus is not a villain, not a good guy. He is one of Marvel's most powerful characters, a true force of nature. You don't dialogue or negotiate with Galactus any more than you negotiate with a storm.</p>
+                <p>Power, amplified by his very advanced science, Galactus is capable of creating life, teleporting planets and destroying entire solar systems.</p>
+            </div>
+            <div id="mephisto">
+                <h2>9. Mephisto</h2>
+                <div><img  src="https://files.meiobit.com/wp-content/uploads/2019/10/20191024dcfe9c7625512aeba3372059f5bf2e11.jpg" alt="Melfisto"></div>
+                <p>Technically Mephisto isn't the devil devil, but for all practical purposes, he is. He commands a hellish dimension, powered by the souls of the damned. Mephisto is responsible for creating, a million years ago, the first Ghost Rider, who obviously didn't use a motorcycle at the time. Mephisto made pacts with the Silver Surfer, Dr Doom and several other characters</p>
+                <p>He possesses superhuman strength and endurance, is immortal, and vastly more powerful than Hela. Mephisto is capable of creating entire parallel universes. His pacts are recognized and respected by almost all Entities of the Multiverse, only rarely is Mefisto challenged, as when he still presented himself as Satan and Johny Blaze, the Ghost Rider was only saved by a literal Deus ex Machina: Jesus (technically they did not explain that it was Him) appeared at 48 of the second half:</p>
+                <div><img class="secundary-image" src="https://files.meiobit.com/wp-content/uploads/2019/10/20191024praisethelord.jpg" alt="Folha de HQ de Melfisto"></div>
+            </div>
+            <div>
+                <h2>8. Amatsu-Mikaboshi</h2>
+                <div><img src="https://files.meiobit.com/wp-content/uploads/2019/10/2019102464258819_684654888631057_8760247778289344411_n.jpg" alt="Amatsu-Mikaboshi"></div>
+                <p>Mikaboshi [is an entity from Japanese mythology. In Marvel he is the King of Chaos, an anti-god, created in the primordial void, a representation of Oblivion. Capable of teleporting between dimensions and universes, Mikaboshi is a shapeshifter, telepath and immortal. He decimated Olympus, then roamed the Multiverse destroying thousands of pantheons.</p>
+            </div>
+            <div>
+                <h2>7. Fênix Force</h2>
+                <div><img src="https://3.bp.blogspot.com/-vKU4H9FGtNk/W601k9sp0BI/AAAAAAAAQrY/Ak9ieygazfcxwzKxMhDCs3InEZDxr4eowCLcBGAs/s1600/Fenix%2BForce.jpg" alt="Força Fênix"></div>
+                <p>The Phoenix Force, the Phoenix Entity is the representation of the Power of Creation, it is capable of destroying and recreating parts of the Universe, entire civilizations were destroyed just by being in the path of the Phoenix Force, which tends to merge with humans, the most famous being Jean Grey. When used to its fullest, the power of the Phoenix Force is capable of affecting even the Beyonder.</p>
+            </div>
+            <div>
+                <h2>6. Franklin Richards</h2>
+                <div><img src="https://www.blogdoselback.com.br/wp-content/uploads/2021/02/Fantastic-Four-X-Men-Comic-Franklin-Richards-Powers.jpg" alt="Franklin Richards"></div>
+                <P>Franklin is just a child, but since he lives in a comic book, he was not born with cancer after his parents, Reed and Susan Richards, were exposed to Cosmic Radiation. Franklin was born a mutant, but not from the commons. In the Marvel Universe there are thousands of mutants. Of those only fourteen are Omega Level, the most powerful. Franklin is ranked beyond Omega Level.</P>
+                <P>His powers include immortality, ability to alter reality, access to almost infinite energies, psychic powers, teleportation, premonition... Franklin in an adult version killed two Celestials in combat, something kind of impossible. He is easily one of the most powerful Marvel characters and the scariest, because he is a child and therefore unpredictable.</P>
+            </div>
+            <div>
+                <h2>5. Scarlet Witch</h2>
+                <div><img src="https://t.ctcdn.com.br/PzQJ4R3DR9Ul2Wa4h8olmVVIQ08=/1243x699/smart/i425895.jpeg" alt="Feiticeira Escarlate"></div>
+                <p>Wanda's powers have always been poorly explained, originally she was a witch, then she started to have mutant powers that altered probabilities, over time it began to involve Chaotic Magic, culminating with the mutant power to alter Reality, to the point that in the House saga of M Wanda command "no more mutants" and alter the entire Universe, turning all mutants into ordinary humans.</p>
+                <p>Wanda has already raised the dead, and her powers can resist even the Phoenix Force, but she goes in and out of the list of the most powerful characters in Marvel, the authors do not know how to deal with them and reduce her powers.</p>
+            </div>
+            <div>
+                <h2>4. Eternity</h2>
+                <div><img src="https://ovicio.com.br/wp-content/uploads/2022/07/20220710-eternity-ovicio.jpg" alt="Eternidade"></div>
+                <p>Eternity is the representation of all living things in the Universe. All thoughts, ideas, knowledge. Eternity is a way for the Universe to interact individually with key agents in moments of serious crisis. Each Universe of the Multiverse has its own Eternity. She is as old as the Universe, possesses cosmic consciousness, and often guides Marvel's mightiest heroes when the Universe's existence is threatened.</p>
+            </div>
+            <div>
+                <h2>3. Beyonder</h2>
+                <div><img src="https://files.meiobit.com/wp-content/uploads/2019/10/20191025bey-1.jpg" alt="Beyonder"></div>
+                <p>Beyonder was a Universe. One day he realized that he was alone, he was not the personification of the Cosmos, he was everything that existed. But he had never had the idea that other creatures could exist, until he glimpsed our Universe, and like a curious child, he began to explore it.</p>
+                <p>He is an omnipotent, interdimensional and multiuniversal entity, he was once considered the most powerful being in all the Marvel Universes, but for some time now he has been retooled, lost many powers, and basically became an Eternal Mutant, like Thanos.</p>
+            </div>
+            <div>
+                <h2>2. Living Tribunal</h2>
+                <div><img src="https://www.einerd.com.br/wp-content/uploads/2019/07/Tribunal-Vivo.jpg" alt="Tribunal Vivo"></div>
+                <p>The Living Tribunal is the second most powerful creature in the Marvel Universes. He represents balance, judges and eventually condemns entire Universes when they threaten cosmic balance. The Living Tribunal only answers to a single Entity, and its powers are nearly infinite. He was killed once, but it took three Beyonders (they're a race now) to accomplish that. He has been destroyed other times, mainly by Thanos.</p>
+            </div>
+            <div id="one-above-all">
+                <h2>1. One Above All</h2>
+                <div><img src="https://files.meiobit.com/wp-content/uploads/2019/10/20191025screenshot-24_10_2019-21_32_27.png" alt="Aquele Acima de Todos"></div>
+                <p>The One Above All is the ultimate entity of all Marvel Multiverses. It is the Alpha and the Omega, the Beginning and the End, the Absolute and Unquestionable Power. He is the Creator of all that exists, no one is more powerful and his only weapon is Love.</p>
+                <p>Of all Marvel's most powerful beings, none rival the One Above All. Even Thanos respects and fears him. The One Above All rarely interferes, but keeps a close eye on each of his creatures, having appeared incognito to comfort Peter Parker, and helped Thanos and Adam Warlock recreate the Multiverse.</p>
+                <p>The One Above All appears as a being of pure light, now male, now female, according to the perception of those who are seeing him, but in the Fantastic Four arc where Ben Grimm dies and the other members of the group go to the sky behind from him, after many trials are invited to Enter the Presence, and know the Creator of All Things in his true form.</p>
+                <p>Yes, the One Above All is <em><strong><a href="https://pt.wikipedia.org/wiki/Jack_Kirby">Jack Kirby</a></strong></em>.</p>
+                <div><img class="secundary-image" src="https://files.meiobit.com/wp-content/uploads/2019/10/20191025screenshot-24_10_2019-23_32_44.png" alt="HQ de Quarteto Fantśtico"></div>
+            </div>
+
+            <aside>
+                <h3>Curiosities</h3>
+                <article id="artcile-1">
+                    <h4>Why is the Hulk green?</h4>
+                    <p>The color green is as closely associated with the Hulk as his legendary mood swings. That color, however, is just the result of an error. 
+                        Originally, the Hulk, created by Stan Lee and Jack Kirby and whose first issue was published in 1967, was gray. However, printing technology made it impossible to print the color uniformly, and each page displayed a different shade of gray.</p>
+                    <div><img src="https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1639415331/content-items/009/886/159/CURIOSIDADES%2520COMICS%2520SUPERHEROES%2520V2.00_01_11_13.Still032-original.jpg?1639415331" alt="Hulk em quadrinhos"></div>
+                    <p>Lee believed it was unacceptable to have a superhero that changed color with each page, and asked the printers what shade they thought might work. In response, he heard that only gray was having problems, so he considered using another color.</p>
+                    <p>Green wasn't used by any superheroes at the time, so he decided to paint the Hulk that way. A choice that ended up becoming one of the character's trademarks. Although, over the years, the green giant has returned to its original color on a few occasions.</p>
+                
+                    <div><img class="aside-image" src="https://t.ctcdn.com.br/5bU4_4Zvdqn2gkI3z-VYo_JhEHQ=/1245x700/smart/i632776.jpeg" alt="Hulk"></div>
+                </article>
+                <article id="article-2">
+                    <h4>The Spider-Man Fan Who Inspired Venom</h4>
+                    <p>Did you know that Venom, one of Marvel's most famous characters, started out as an extra suit for Spider-Man? Marvel held a contest for artists and writers and a kid named Randy Schueller entered with an original design for the Spider-Man costume: black with a red spider emblazoned on the chest. Marvel editors paid him $220 for the creation, which became one of Spider-Man's suits and, later, Venom.</p>
+                    <div><img id="float-left" class="aside-image" src="https://cdn.domestika.org/c_fit,dpr_1.0,f_auto,q_80,t_base_params,w_610/v1639415790/content-items/009/886/243/venom_traje-original.png?1639415790" alt="Homem Aranha"></div>
+                </article>
+                <article id="article-3">
+                    <h4>X-Men Power Levels</h4>
+
+                    <p>
+                        When it comes to superheroes, few groups are as iconic and diverse as the X-Men. These extraordinary mutants possess a wide range of abilities, from weather control to telepathy and instant regeneration. If you've ever wondered how the X-Men stack up in terms of power, we're here to clarify. Below, we present a table that ranks some of the most notable members of the team by their respective power levels. From the enigmatic Professor X, with his Omega-level telepathy, to the relentless Wolverine, with his Alpha-level healing factor and adamantium claws, this table offers a fascinating glimpse into the world of the X-Men.
+                    </p>
+
+                    <p>
+                        As we delve into the X-Men universe, it becomes evident that their abilities and powers vary widely, and this diversity is part of what makes this team so intriguing. Some mutants have reached power levels that defy understanding, while others stand out for their unique and skillful abilities. Follow the table below to discover how these incredible heroes compare in terms of power. It's a small sample of the vast roster of characters that make up the rich and complex history of the X-Men.
+                    </p>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Poder</th>
+                                <th>Nível de Poder</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Professor X</td>
+                                <td>Telepatia</td>
+                                <td>Nível Omega</td>
+                            </tr>
+                            <tr>
+                                <td>Wolverine</td>
+                                <td>Fator de Cura e Garras de Adamantium</td>
+                                <td>Nível Alpha</td>
+                            </tr>
+                            <tr>
+                                <td>Storm</td>
+                                <td>Controle do Clima</td>
+                                <td>Nível Alpha</td>
+                            </tr>
+                            <tr>
+                                <td>Cyclops</td>
+                                <td>Feixes Óticos</td>
+                                <td>Nível Beta</td>
+                            </tr>
+                            <tr>
+                                <td>Magneto</td>
+                                <td>Controle Magnético</td>
+                                <td>Nível Alpha</td>
+                            </tr>
+                            <tr>
+                                <td>Phoenix (Jean Grey)</td>
+                                <td>Telecinese e Fênix Negra</td>
+                                <td>Nível Omega</td>
+                            </tr>
+                            <tr>
+                                <td>Nightcrawler</td>
+                                <td>Teletransporte</td>
+                                <td>Nível Beta</td>
+                            </tr>
+                            <tr>
+                                <td>Beast</td>
+                                <td>Super Força e Agilidade</td>
+                                <td>Nível Beta</td>
+                            </tr>
+                            <tr>
+                                <td>Gambit</td>
+                                <td>Manipulação de Energia Cinética</td>
+                                <td>Nível Alpha</td>
+                            </tr>
+                            <tr>
+                                <td>Rogue</td>
+                                <td>Absorção de Poderes</td>
+                                <td>Nível Beta</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        <p>Site exemplo criado por <a href="https://github.com/Samueldnz" target="_blank">Samuel Sampaio</a> durante a disciplina Desenvolvimento Web - UFRJ</p>
+    </footer>
+</body>
+</html>
