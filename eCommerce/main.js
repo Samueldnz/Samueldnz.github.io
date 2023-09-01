@@ -1,3 +1,5 @@
+import { inicializarCarrinho } from "./src/menuCarrinho";
+
 const catalogo = [
     
     { id: 1, marca: 'Zara', nome: 'Camisa Larga com Bolsos', preco: 70, imagem: 'product-1.jpg', feminino: false, }, 
@@ -24,5 +26,5 @@ for (const produtoCatalogo of catalogo){
     document.getElementById("container-produto").innerHTML += cartaoProduto;
 };
 
-
+inicializarCarrinho();
 
