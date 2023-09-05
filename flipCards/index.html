@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bingo com Flip Card</title>
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+
+            .container{
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 20px;
+            }
+
+            .flip-container{
+                display: block;
+                width: 300px;
+                height: 200px;
+                perspective: 1000px;
+            }
+
+            .flipper{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.8s;
+                transform-style: preserve-3d;
+            }
+
+            #switch:checked ~ .flip-container .flipper{
+                transform: rotateY(180deg);
+            }
+
+            #switch2:checked ~ .flip-container .flipper{
+                transform: rotateY(180deg);
+            }
+
+            #switch3:checked ~ .flip-container .flipper{
+                transform: rotateY(180deg);
+            }
+
+            .front, .back{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+            }
+
+            .back{
+                transform: rotateY(180deg);
+            }
+
+            #switch, #switch2, #switch3{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item">
+                <input type="checkbox" id="switch">
+                <label class="flip-container" for="switch">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="https://picsum.photos/id/411/300/200" alt="Imagem de Frente">
+                        </div>
+                        <div class="back">
+                            <img src="https://picsum.photos/id/249/300/200" alt="Imagem de Fundo">
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="item">
+                <input type="checkbox" id="switch2">
+                <label class="flip-container" for="switch2">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="https://picsum.photos/id/411/300/200" alt="Imagem de Frente">
+                        </div>
+                        <div class="back">
+                            <img src="https://picsum.photos/id/249/300/200" alt="Imagem de Fundo">
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="item">
+                <input type="checkbox" id="switch3">
+                <label class="flip-container" for="switch3">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="https://picsum.photos/id/411/300/200" alt="Imagem de Frente">
+                        </div>
+                        <div class="back">
+                            <img src="https://picsum.photos/id/249/300/200" alt="Imagem de Fundo">
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </body>
+</html>
