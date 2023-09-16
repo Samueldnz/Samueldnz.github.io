@@ -263,7 +263,7 @@ function drawClock(place) {
     context.drawImage(img, coord.x, coord.y, size[0], size[1]);
 
     const logo = new Image();
-    logo.src = "./fluminense.png";
+    logo.src = "./selecao-brasileira-brasil.png";
     logo.decode().then(() => {
       // Translate the center of the logo
       // to the center of the canvas.
