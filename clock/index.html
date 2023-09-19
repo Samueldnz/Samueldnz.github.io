@@ -51,7 +51,7 @@
 
     <body>
         <p id="flu">
-            <a href="http://www.fluminense.com.br/site/"
+            <a href="https://www.cbf.com.br/selecao-brasileira"
                 >Seleção Brasileira</a
             >
             <sub style="font-size: small">
@@ -90,52 +90,63 @@
             </small>
         </p>
         <p>
-            <iframe
-                title="O elástico de Rivelino"
-                width="320"
-                height="240"
-                src="https://www.youtube.com/embed/jt7ebGO6ILg"
-                frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-            >
+            <iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/hmbmN_F23YQ?si=9XnHZmBiHTQ6CWMK" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
             </iframe>
             <br />
-            <small id="Rivelino">
-                Elástico de Rivelino
-                <a href="https://www.youtube.com/watch?v=jt7ebGO6ILg">
-                    10/06/1975
-                </a>
+            <small id="primeiro">
+                1º lugar - Brasil x Suécia
+                <a href="https://www.youtube.com/watch?v=b7HxdArNVWQ" target="_blank">29/06/1958</a>
+            </small>
+            <br/>
+            <small id="segundo">
+                2º lugar - Brasil x Tchecoslováquia
+                <a href="https://www.youtube.com/watch?v=b7HxdArNVWQ" target="_blank">03/06/1970</a>
             </small>
             <br />
-            <small id="Renato">
-                Gol de barriga do Renato
-                <a href="https://www.youtube.com/watch?v=CrIFGVYuq6c">
-                    25/06/1995
-                </a>
+            <small id="terceiro">
+                3º lugar - Brasil x França
+                <a href="https://www.youtube.com/watch?v=b7HxdArNVWQ" target="_blank">24/06/1958</a>
             </small>
             <br />
-            <small id="Cano">
-                Golaço de Cano do meio de campo
-                <a href="https://www.youtube.com/watch?v=UA-HwS766Hw">
-                    12/02/2023
-                </a>
+            <small id="quarto">
+                4º lugar - Brasil x Itália
+                <a href="https://www.youtube.com/watch?v=b7HxdArNVWQ" target="_blank">21/06/1970</a>
+            </small>
+            <br />
+            <small id="quinto">
+                5º lugar - Brasil x País de Gales
+                <a href="https://www.youtube.com/watch?v=b7HxdArNVWQ" target="_blank">18/06/1958</a>
             </small>
         </p>
-
+        
         <script src="suncalc.js"></script>
         <script src="clock.js"></script>
         <script src="date.js"></script>
         <script>
-            document.querySelector(
-                "#Rivelino"
-            ).innerHTML += `(há ${elapsedYears("1975-06-10")} anos atrás)`;
-            document.querySelector("#Renato").innerHTML += `(há ${elapsedYears(
-                "1995-06-25"
-            )} anos atrás)`;
-            document.querySelector("#Cano").innerHTML += `(há ${elapsedYears(
-                "2023-02-12"
-            )} anos atrás)`;
+            document.querySelector("#primeiro").innerHTML += `(há ${elapsedYears("1958-06-29")}
+            anos atrás)`;
+            
+            document.querySelector("#segundo").innerHTML += `(há ${elapsedYears("1970-06-03")} 
+            anos atrás)`;
+            
+            document.querySelector("#terceiro").innerHTML += `(há ${elapsedYears("1958-06-21")} 
+            anos atrás)`;
+            
+            document.querySelector("#quarto").innerHTML += `(há ${elapsedYears("1970-06-21")}
+            anos atrás)`;
+            
+            document.querySelector("#quinto").innerHTML += `(há ${elapsedYears("1958-06-18")}
+            anos atrás)`;
         </script>
     </body>
 </html>
+
+
+
