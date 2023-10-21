@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Financial Credit Calculator</title>
+        <link rel="stylesheet" href="style.css">   
+    </head>
+    <body> 
+        <fieldset id="cdcfieldset" class="draggable ui-widget-content">
+            <legend id="legend"><strong>Direct Consumer Credit</strong></legend>
+            <form action="#"> <!-- sem URL de tratamento dos dados da planilha por enquanto--> 
+                <div class="box">  
+                    <div class="box-child">
+                        <label for="parc">Parcelamento:</label>
+                        <input
+                            id="parc"
+                            type="number"
+                            name="np"
+                            size="5"
+                            value="36"
+                            min="1"
+                            max="72000"
+                            step="1"
+                            required>meses <br>
+                    </div>
+
+                    <div class="box-child">
+                        <label for="itax">Taxa de juros:</label>
+                        <input
+                            id="itax"
+                            type="number"
+                            name="tax"
+                            size="10"
+                            value="0.5"
+                            min="0.0"
+                            max="100.0"
+                            step="any"
+                            required>% a.m <br>
+                    </div>
+
+                    <div class="box-child">
+                        <label for="ipv">Valor Financiado: </label>
+                        <span class="input-group-addon">R$</span>
+                        <input
+                            id="ipv"
+                            type="number"
+                            name="pv"
+                            value="1000"
+                            min="0.0"
+                            step="0.01"
+                            class="form-control currency"
+                            required><br>
+                    </div>
+                    
+                    <div class="box-child">
+                        <label for="ipp">Valor Final (opcional):</label>
+                        <span class="input-group-addon">R$</span>
+                        <input
+                            id="ipp"
+                            type="number"
+                            name="pp"
+                            value="0.0"
+                            min="0.0"
+                            step="0.01"
+                            class="form-control currency"
+                            required><br>
+                    </div>
+                    <div class="box-child">
+                        <label for="ipb">Valor a Voltar(opcional):</label>
+                        <span class="input-group-addon">R$</span>
+                        <input
+                            id="ipb"
+                            type="number"
+                            name="pb"
+                            value="0.0"
+                            min="0.0"
+                            step="0.01"
+                            class="form-control currency"
+                            required><br>
+                    </div>
+
+                    <div class="box-child">
+                        <label for="idp">Entrada?</label>
+                        <input id="idp" type="checkbox" name="dp" value="1"><br>
+                    </div>
+                </div>
+                <div class="messages">
+                    <input 
+                        id="submitButton"
+                        class="button"
+                        type="submit"
+                        value="Calcular">
+
+                    <em>
+                        <p>*(arraste-me para reposicionar a janela)</p>
+                    </em>
+                </div>
+            </form>
+
+            <div id="errorMessage"></div>
+            <div id="successMessage">
+                <p>
+                    Se não souber a taxa de juros coloque 0%, e forneça o valor
+                    final.
+                </p>
+            </div>
+        </fieldset>
+    </body>
+</html>
