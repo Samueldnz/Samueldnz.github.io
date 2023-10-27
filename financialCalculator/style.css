@@ -37,6 +37,7 @@ legend{
     background-color: #ff6347;
     padding: 0.2em 0.8em;
 }
+
 #submitButton {
     width: 80px;
     margin-left: 20px;
@@ -64,6 +65,7 @@ legend{
 }
 #cdcfieldset {
     cursor: move;
+    display: block;
     border: 1px black solid;
     background-color: #cac3ba;
     width: 400px;
@@ -81,4 +83,60 @@ input.currency {
 }
 .messages {
     text-align: center;
+}
+
+#data-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+    display: none;
+}
+
+.data-box{
+    background-color: rgba(128, 128, 128, 0.356);
+    width: 20vw;
+    border: solid black 2px;
+    border-radius: 10%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+#table-container{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#table-box{
+    background-color: rgba(128, 128, 128, 0.356);  
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid rgba(0, 0, 0, 0.61);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#table-box p{
+    font-size: 1.5em;
+}
+
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+th, td {
+    border: 1px solid rgba(0, 0, 0, 0.562);
+    text-align: center;
+    padding: 8px;
 }

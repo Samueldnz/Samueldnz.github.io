@@ -1,11 +1,11 @@
-function toggleList(id) {
-  // alert(JSON.stringify($(id).css("display")));
-  if ($(id).css("display") != "none") {
-    $(id).fadeOut();
-  } else {
-    $(id).fadeIn();
-  }
-}
+// function toggleList(id) {
+//   // alert(JSON.stringify($(id).css("display")));
+//   if ($(id).css("display") != "none") {
+//     $(id).fadeOut();
+//   } else {
+//     $(id).fadeIn();
+//   }
+// }
 
 function dragAndSave(id) {
   // mobile devices have trouble to drag.
@@ -28,17 +28,17 @@ function dragAndSave(id) {
   });
 
   // reset localStorage
-  window.onkeydown = function (event) {
-    if (event.key === "Escape" || event.key === "e") {
-      if (event.metaKey || event.ctrlKey) {
-        localStorage.clear();
-        alert("Local storage has been cleared");
-      }
-    } else if (event.key == "b") {
-      window.location.href = "/cwdc";
-    } else if (event.key == "B") {
-      let path = window.location.pathname;
-      window.location.href = path.split("/", 3).join("/");
-    }
-  };
+  // window.onkeydown = function (event) {
+  //   if (event.key === "Escape" || event.key === "e") {
+  //     if (event.metaKey || event.ctrlKey) {
+  //       localStorage.clear();
+  //       alert("Local storage has been cleared");
+  //     }
+  //   } else if (event.key == "b") {
+  //     window.location.href = "/cwdc";
+  //   } else if (event.key == "B") {
+  //     let path = window.location.pathname;
+  //     window.location.href = path.split("/", 3).join("/");
+  //   }
+  // };
 }
