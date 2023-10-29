@@ -91,7 +91,6 @@ input.currency {
     justify-content: space-around;
     padding: 10px;
     align-items: center;
-    display: none;
 }
 
 .data-box{
@@ -127,6 +126,12 @@ input.currency {
 
 #table-box p{
     font-size: 1.5em;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 table {

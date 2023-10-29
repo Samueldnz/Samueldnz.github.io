@@ -1,8 +1,12 @@
 const submitButton = document.getElementById("submitButton");
 const fieldset = document.getElementById("cdcfieldset");
 const tableContainer = document.getElementById("table-container");
+const dataContainer = document.getElementById("data-container");
+const importantData1 = document.getElementById("important-data");
+const importantData2 = document.getElementById("important-data2");
 
 tableContainer.style.display = "none";
+dataContainer.style.display = "none";
 
 function messageError(errorMessage, event) {
     document.getElementById("errorMessage").innerHTML = errorMessage;
@@ -23,6 +27,8 @@ function validateForm(event){
     let finalValue = parseFloat(document.getElementById("ipp").value);
     let time = parseInt(document.getElementById("parc").value);
 
+    console.log("Valores: " + monthlyRate + ";" + principalValue + ";" + finalValue + ";" + time);
+
     if (monthlyRate === 0 && principalValue === 0) {
         errorMessage += "<p>Taxa de juros e valor financiado não podem ser ambos nulos.</p>";
     }
@@ -38,33 +44,29 @@ function validateForm(event){
     }else{
         document.getElementById("successMessage").style.display = "block";
         document.getElementById("errorMessage").style.display = "none";
+        validateData(monthlyRate, principalValue, finalValue, time);
         event.preventDefault();
     }
 };
 
-submitButton.addEventListener("click", submitButtonClicked);
-
-function submitButtonClicked(event){
-    validateForm(event);
-    validateData();
-}
-
-function validateData(event){
-    let monthlyRate = parseFloat(document.getElementById("itax").value);
-    let principalValue = parseFloat(document.getElementById("ipv").value);
-    let finalValue = parseFloat(document.getElementById("ipp").value);
-    let time = parseInt(document.getElementById("parc").value);
+function validateData(monthlyRate, principalValue, finalValue, time){
 
     if(monthlyRate === 0.0){
         monthlyRate = calculateMonthlyInterestRate(principalValue, finalValue, time);
-        const table = priceTable(principalValue, time, monthlyRate);
+        const table = priceTable(principalValue, time, monthlyRate, finalValue);
         populateTable(table);
         fieldset.style.display = "none";
         tableContainer.style.display = "flex";
+        dataContainer.style.display = "flex";
 
     }else if(finalValue === 0.0){
         const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate);
         finalValue = calculateFinalValue(installmentValue, time);
+        const table = priceTable(principalValue, time, monthlyRate, finalValue);
+        populateTable(table);
+        fieldset.style.display = "none";
+        tableContainer.style.display = "flex";
+        dataContainer.style.display = "flex";
     }else if (principalValue === 0.0){
         // fazer alguma coisa aqui
     };
@@ -76,8 +78,8 @@ function validateData(event){
 // - principalValue: The initial principal amount borrowed.
 // - monthlyRate: The monthly interest rate as a percentage.
 function calculateMonthlyInterestRate(principalValue, finalValue, time){
-    const precision = 0.0001; //desire accuracy
-    let monthlyRate = 0.1; //estimated initial rate
+    const precision = 0.000001; //desire accuracy
+    let monthlyRate = 0.01; //estimated initial rate
 
     // Function that represents the financial equation
     function equation(monthlyRate){
@@ -125,7 +127,7 @@ function calculateInstallmentValue(time, principalValue, monthlyRate){
 // - time: The total number of installments.
 // - monthlyRate: The monthly interest rate as a percentage.
 // Returns: An array of objects representing each installment's details.
-function priceTable(principalValue, time, monthlyRate){
+function priceTable(principalValue, time, monthlyRate, finalValue){
 
     const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate);
     const priceTable = [];
@@ -145,6 +147,7 @@ function priceTable(principalValue, time, monthlyRate){
             outstandingBalance
         });
     }
+    showData(monthlyRate, principalValue, finalValue, time, installmentValue);
     return priceTable;
 }
 
@@ -168,7 +171,26 @@ function populateTable(tableData) {
     });
 }
 
+function showData(monthlyRate, principalValue, finalValue, time, installmentValue){
+    const importantDataHTML1 = 
+        `<p class="title">Important data</p>
+        <p>Parcelamento: ${time} meses </p>
+        <p>Taxa: ${monthlyRate.toFixed(2)} % a.m</p>
+        <p>Coeficiente de prestação: </p>
+        <p>Prestação: R$ ${installmentValue.toFixed(2)} </p>`;
+
+    const importantDataHTML2 = 
+        `<p class="title">Important data</p>
+        <p>Valor Financiado: R$ ${principalValue.toFixed(2)} </p>
+        <p>Valor Final: R$ ${finalValue.toFixed(2)} </p>
+        <p>Valor a Voltar: 0.0 </p>
+        <p>Entrada: </p>`;
+
+    importantData1.innerHTML = importantDataHTML1;
+    importantData2.innerHTML = importantDataHTML2;
+}
 
 
+submitButton.addEventListener("click", validateForm);
 
 
