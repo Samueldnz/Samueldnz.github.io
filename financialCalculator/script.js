@@ -4,6 +4,7 @@ const tableContainer = document.getElementById("table-container");
 const dataContainer = document.getElementById("data-container");
 const importantData1 = document.getElementById("important-data");
 const importantData2 = document.getElementById("important-data2");
+const checkbox = document.getElementById("idp");
 
 tableContainer.style.display = "none";
 dataContainer.style.display = "none";
@@ -27,8 +28,6 @@ function validateForm(event){
     let finalValue = parseFloat(document.getElementById("ipp").value);
     let time = parseInt(document.getElementById("parc").value);
 
-    console.log("Valores: " + monthlyRate + ";" + principalValue + ";" + finalValue + ";" + time);
-
     if (monthlyRate === 0 && principalValue === 0) {
         errorMessage += "<p>Taxa de juros e valor financiado não podem ser ambos nulos.</p>";
     }
@@ -44,16 +43,16 @@ function validateForm(event){
     }else{
         document.getElementById("successMessage").style.display = "block";
         document.getElementById("errorMessage").style.display = "none";
-        validateData(monthlyRate, principalValue, finalValue, time);
+        validateData(principalValue, finalValue, time, monthlyRate, checkbox);
         event.preventDefault();
     }
 };
 
-function validateData(monthlyRate, principalValue, finalValue, time){
+function validateData(principalValue, finalValue, time, monthlyRate, checkbox){
 
     if(monthlyRate === 0.0){
-        monthlyRate = calculateMonthlyInterestRate(principalValue, finalValue, time);
-        const table = priceTable(principalValue, time, monthlyRate, finalValue);
+        monthlyRate = calculateMonthlyInterestRate(principalValue, finalValue, time, checkbox);
+        const table = priceTable(principalValue, time, monthlyRate, finalValue, checkbox);
         populateTable(table, finalValue);
         fieldset.style.display = "none";
         tableContainer.style.display = "flex";
@@ -62,7 +61,7 @@ function validateData(monthlyRate, principalValue, finalValue, time){
     }else if(finalValue === 0.0){
         const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate);
         finalValue = calculateFinalValue(installmentValue, time);
-        const table = priceTable(principalValue, time, monthlyRate, finalValue);
+        const table = priceTable(principalValue, time, monthlyRate, finalValue, checkbox);
         populateTable(table, finalValue);
         fieldset.style.display = "none";
         tableContainer.style.display = "flex";
@@ -72,32 +71,58 @@ function validateData(monthlyRate, principalValue, finalValue, time){
     };
 }
 
-// Function to calculate monthly interest rate using Newton-Raphson method
-// Parameters:
-// - time: The total number of installments.
-// - principalValue: The initial principal amount borrowed.
-// - monthlyRate: The monthly interest rate as a percentage.
-function calculateMonthlyInterestRate(principalValue, finalValue, time){
-    const precision = 0.000001; //desire accuracy
-    let monthlyRate = 0.01; //estimated initial rate
+function calculateEquationValue(principalValue, finalValue, interestRate, checkbox, time){
+    let a = 0, b = 0, c = 0;
 
-    // Function that represents the financial equation
-    function equation(monthlyRate){
-        return principalValue * Math.pow(1 + monthlyRate, time) - finalValue;
+    if(checkbox.checked){
+        // a = Math.pow(1 + interestRate, time - 2);
+        b = Math.pow(1 + interestRate, time - 1);
+        c = Math,pow(1 + interestRate, time);
+
+        return (principalValue + interestRate*b) - (finalValue/time*(c - 1));
+    }else{
+        a = Math.pow(1 + interestRate, -time);
+        b = Math.pow(1 + interestRate, -time-1);
+
+        return (principalValue*interestRate) - ((finalValue/time)*(1-a));
+    }
+};
+
+function calculateDerivative(principalValue, finalValue, interestRate, checkbox, time){
+    let a = 0, b = 0, c = 0;
+
+    if(checkbox.checked){
+        a = Math.pow(1 + interestRate, time - 2);
+        b = Math.pow(1 + interestRate, time - 1);
+
+        return principalValue*(b + (interestRate * a * (time - 1))) - (finalValue * b);
+    }else{
+        a = Math.pow(1 + interestRate, -time);
+        b = Math.pow(1 + interestRate, -time - 1);
+
+        return principalValue - (finalValue*b);
+    }
+};
+
+
+function calculateMonthlyInterestRate(principalValue, finalValue, time, checkbox){
+    const tolerance = 0.0001;
+    let interestRate = 0.1; //initial guess
+    let interestRateBefore = 0.0;
+
+    let equation = 0;
+    let derivative = 0;
+
+    while(Math.abs(interestRateBefore - interestRate) >= tolerance){
+        interestRateBefore = interestRate;
+        equation = calculateEquationValue(principalValue, finalValue, interestRate, checkbox, time);
+        derivative = calculateDerivative(principalValue, finalValue, interestRate, checkbox, time);
+
+        interestRate = interestRate - (equation/derivative);
     }
 
-    // Derivative of the equation with respect to the rate (required for the Newton-Raphson Method)
-    function derivative(monthlyRate){
-        return time * principalValue * Math.pow(1 + monthlyRate, time - 1);
-    }
-
-    // Apply the Newton-Raphson Method to find the interest rate
-    while(Math.abs(equation(monthlyRate)) > precision){
-        monthlyRate = monthlyRate - equation(monthlyRate)/derivative(monthlyRate);
-    }
-
-    return monthlyRate * 100;
-}
+    return interestRate*100;
+};
 
 // Calculates the final value to be paid based on the installment amount and the number of installments.
 // Parameters:
@@ -127,7 +152,7 @@ function calculateInstallmentValue(time, principalValue, monthlyRate){
 // - time: The total number of installments.
 // - monthlyRate: The monthly interest rate as a percentage.
 // Returns: An array of objects representing each installment's details.
-function priceTable(principalValue, time, monthlyRate, finalValue){
+function priceTable(principalValue, time, monthlyRate, finalValue, checkbox){
 
     const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate);
     const priceTable = [];
@@ -147,7 +172,7 @@ function priceTable(principalValue, time, monthlyRate, finalValue){
             outstandingBalance
         });
     }
-    showData(monthlyRate, principalValue, finalValue, time, installmentValue);
+    showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox);
     return priceTable;
 }
 
@@ -197,7 +222,7 @@ function populateTable(tableData, finalValue) {
     cell0.textContent = "0";
 }
 
-function showData(monthlyRate, principalValue, finalValue, time, installmentValue){
+function showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox){
     const importantDataHTML1 = 
         `<p class="title">Important data</p>
         <p>Parcelamento: ${time} meses </p>
@@ -210,7 +235,7 @@ function showData(monthlyRate, principalValue, finalValue, time, installmentValu
         <p>Valor Financiado: R$ ${principalValue.toFixed(2)} </p>
         <p>Valor Final: R$ ${finalValue.toFixed(2)} </p>
         <p>Valor a Voltar: 0.0 </p>
-        <p>Entrada: </p>`;
+        <p>Entrada: ${checkbox.checked}`;
 
     importantData1.innerHTML = importantDataHTML1;
     importantData2.innerHTML = importantDataHTML2;
