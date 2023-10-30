@@ -54,7 +54,7 @@ function validateData(monthlyRate, principalValue, finalValue, time){
     if(monthlyRate === 0.0){
         monthlyRate = calculateMonthlyInterestRate(principalValue, finalValue, time);
         const table = priceTable(principalValue, time, monthlyRate, finalValue);
-        populateTable(table);
+        populateTable(table, finalValue);
         fieldset.style.display = "none";
         tableContainer.style.display = "flex";
         dataContainer.style.display = "flex";
@@ -63,7 +63,7 @@ function validateData(monthlyRate, principalValue, finalValue, time){
         const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate);
         finalValue = calculateFinalValue(installmentValue, time);
         const table = priceTable(principalValue, time, monthlyRate, finalValue);
-        populateTable(table);
+        populateTable(table, finalValue);
         fieldset.style.display = "none";
         tableContainer.style.display = "flex";
         dataContainer.style.display = "flex";
@@ -152,8 +152,21 @@ function priceTable(principalValue, time, monthlyRate, finalValue){
 }
 
 // Function to populate the HTML table
-function populateTable(tableData) {
+function populateTable(tableData, finalValue) {
     const table = document.getElementById("price-table");
+
+    const titleRow = table.insertRow();
+    const cell1 = titleRow.insertCell(0);
+    const cell2 = titleRow.insertCell(1);
+    const cell3 = titleRow.insertCell(2);
+    const cell4 = titleRow.insertCell(3);
+    const cell5 = titleRow.insertCell(4);
+
+    cell1.textContent = "Index";
+    cell2.textContent = "Installment Value";
+    cell3.textContent = "Interest Rate Value";
+    cell4.textContent = "Amortization Value";
+    cell5.textContent = "Outstanding Balance";
 
     tableData.forEach(item => {
         const row = table.insertRow();
@@ -169,6 +182,19 @@ function populateTable(tableData) {
         cell4.textContent = item.amortization.toFixed(2);
         cell5.textContent = item.outstandingBalance.toFixed(2);
     });
+
+    const finalRow = table.insertRow();
+    const cell6 = finalRow.insertCell(0);
+    const cell7 = finalRow.insertCell(1);
+    const cell8 = finalRow.insertCell(2);
+    const cell9 = finalRow.insertCell(3);
+    const cell0 = finalRow.insertCell(4);
+
+    cell6.textContent = "Total: ";
+    cell7.textContent = `R$ ${finalValue.toFixed(2)}`;
+    cell8.textContent = "0";
+    cell9.textContent = "0";
+    cell0.textContent = "0";
 }
 
 function showData(monthlyRate, principalValue, finalValue, time, installmentValue){
@@ -192,5 +218,3 @@ function showData(monthlyRate, principalValue, finalValue, time, installmentValu
 
 
 submitButton.addEventListener("click", validateForm);
-
-
