@@ -5,6 +5,9 @@ const dataContainer = document.getElementById("data-container");
 const importantData1 = document.getElementById("important-data");
 const importantData2 = document.getElementById("important-data2");
 const checkbox = document.getElementById("idp");
+const entryDIV = document.getElementById("entryDIV");
+
+entryDIV.style.display = "none";
 
 tableContainer.style.display = "none";
 dataContainer.style.display = "none";
@@ -26,7 +29,8 @@ function validateForm(event){
     let monthlyRate = parseFloat(document.getElementById("itax").value);
     let principalValue = parseFloat(document.getElementById("ipv").value);
     let finalValue = parseFloat(document.getElementById("ipp").value);
-    let time = parseInt(document.getElementById("parc").value);
+    let time = parseFloat(document.getElementById("parc").value);
+    let entryValue = parseFloat(document.getElementById("financingEntry").value);
 
     if (monthlyRate === 0 && principalValue === 0) {
         errorMessage += "<p>Taxa de juros e valor financiado não podem ser ambos nulos.</p>";
@@ -43,26 +47,26 @@ function validateForm(event){
     }else{
         document.getElementById("successMessage").style.display = "block";
         document.getElementById("errorMessage").style.display = "none";
-        validateData(principalValue, finalValue, time, monthlyRate, checkbox);
+        validateData(principalValue, finalValue, time, monthlyRate, checkbox, entryValue);
         event.preventDefault();
     }
 };
 
-function validateData(principalValue, finalValue, time, monthlyRate, checkbox){
+function validateData(principalValue, finalValue, time, monthlyRate, checkbox, entryValue){
 
     if(monthlyRate === 0.0){
         monthlyRate = calculateMonthlyInterestRate(principalValue, finalValue, time, checkbox);
-        const table = priceTable(principalValue, time, monthlyRate, finalValue, checkbox);
-        populateTable(table, finalValue);
+        const table = priceTable(principalValue, time, monthlyRate, finalValue, checkbox, entryValue);
+        populateTable(table, finalValue, principalValue, entryValue);
         fieldset.style.display = "none";
         tableContainer.style.display = "flex";
         dataContainer.style.display = "flex";
 
     }else if(finalValue === 0.0){
-        const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate);
-        finalValue = calculateFinalValue(installmentValue, time);
-        const table = priceTable(principalValue, time, monthlyRate, finalValue, checkbox);
-        populateTable(table, finalValue);
+        const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate, entryValue);
+        finalValue = calculateFinalValue(installmentValue, time, entryValue);
+        const table = priceTable(principalValue, time, monthlyRate, finalValue, checkbox, entryValue);
+        populateTable(table, finalValue, principalValue, entryValue);
         fieldset.style.display = "none";
         tableContainer.style.display = "flex";
         dataContainer.style.display = "flex";
@@ -129,8 +133,8 @@ function calculateMonthlyInterestRate(principalValue, finalValue, time, checkbox
 // - installmentValue: The value of each installment.
 // - numberOfInstallment: The total number of installments.
 // Returns: The final amount to be paid after all installments.
-function calculateFinalValue(installmentValue, numberOfInstallment){
-    return installmentValue*numberOfInstallment;
+function calculateFinalValue(installmentValue, numberOfInstallment, entryValue){
+    return (installmentValue*numberOfInstallment)+entryValue;
 }
 
 // Calculates the value of each installment using the given principal amount, time period, and monthly interest rate.
@@ -139,9 +143,9 @@ function calculateFinalValue(installmentValue, numberOfInstallment){
 // - principalValue: The initial principal amount borrowed.
 // - monthlyRate: The monthly interest rate as a percentage.
 // Returns: The value of each installment.
-function calculateInstallmentValue(time, principalValue, monthlyRate){
+function calculateInstallmentValue(time, principalValue, monthlyRate, entryValue){
     const fator = Math.pow(1+monthlyRate/100, time);
-    const installmentValue = (principalValue*(monthlyRate/100)*fator)/(fator - 1);
+    const installmentValue = ((principalValue-entryValue)*(monthlyRate/100)*fator)/(fator - 1);
     return installmentValue;
 }
 
@@ -152,12 +156,12 @@ function calculateInstallmentValue(time, principalValue, monthlyRate){
 // - time: The total number of installments.
 // - monthlyRate: The monthly interest rate as a percentage.
 // Returns: An array of objects representing each installment's details.
-function priceTable(principalValue, time, monthlyRate, finalValue, checkbox){
+function priceTable(principalValue, time, monthlyRate, finalValue, checkbox, entryValue){
 
-    const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate);
+    const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate, entryValue);
     const priceTable = [];
 
-    let outstandingBalance = principalValue;
+    let outstandingBalance = principalValue-entryValue;
     let i = 0;
     for(i = 1; i <= time; i++){
         const interestValue = outstandingBalance * monthlyRate/100;
@@ -172,12 +176,12 @@ function priceTable(principalValue, time, monthlyRate, finalValue, checkbox){
             outstandingBalance
         });
     }
-    showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox);
+    showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, calculatefinancingCoefficient(monthlyRate, time));
     return priceTable;
 }
 
 // Function to populate the HTML table
-function populateTable(tableData, finalValue) {
+function populateTable(tableData, finalValue, principalValue, entryValue) {
     const table = document.getElementById("price-table");
 
     const titleRow = table.insertRow();
@@ -202,10 +206,10 @@ function populateTable(tableData, finalValue) {
         const cell5 = row.insertCell(4);
 
         cell1.textContent = item.installmentNumber;
-        cell2.textContent = item.installmentValue.toFixed(2);
-        cell3.textContent = item.interestValue.toFixed(2);
-        cell4.textContent = item.amortization.toFixed(2);
-        cell5.textContent = item.outstandingBalance.toFixed(2);
+        cell2.textContent = "R$ " + item.installmentValue.toFixed(2);
+        cell3.textContent = "R$ " + item.interestValue.toFixed(2);
+        cell4.textContent = "R$ " + item.amortization.toFixed(2);
+        cell5.textContent = "R$ " + item.outstandingBalance.toFixed(2);
     });
 
     const finalRow = table.insertRow();
@@ -217,17 +221,17 @@ function populateTable(tableData, finalValue) {
 
     cell6.textContent = "Total: ";
     cell7.textContent = `R$ ${finalValue.toFixed(2)}`;
-    cell8.textContent = "0";
-    cell9.textContent = "0";
+    cell8.textContent = `R$ ${(finalValue-principalValue).toFixed(2)}`;
+    cell9.textContent = `R$ ${(principalValue-entryValue).toFixed(2)}`;
     cell0.textContent = "0";
 }
 
-function showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox){
+function showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, FCoefficient){
     const importantDataHTML1 = 
         `<p class="title">Important data</p>
         <p>Parcelamento: ${time} meses </p>
         <p>Taxa: ${monthlyRate.toFixed(2)} % a.m</p>
-        <p>Coeficiente de prestação: </p>
+        <p>Coeficiente de financiamento: ${FCoefficient.toFixed(2)}</p>
         <p>Prestação: R$ ${installmentValue.toFixed(2)} </p>`;
 
     const importantDataHTML2 = 
@@ -241,5 +245,19 @@ function showData(monthlyRate, principalValue, finalValue, time, installmentValu
     importantData2.innerHTML = importantDataHTML2;
 }
 
+function calculatefinancingCoefficient(monthlyRate, time){
+    const fator = Math.pow(1 + monthlyRate/100, -time);
+    return (monthlyRate/100)/(1 - fator);
+}
+
+function displayEntryDIV(){
+    if(checkbox.checked){
+        entryDIV.style.display = "block";
+    }else{
+        entryDIV.style.display = "none";
+    }
+};
+
 
 submitButton.addEventListener("click", validateForm);
+checkbox.addEventListener("change", displayEntryDIV);
