@@ -66,7 +66,7 @@ function validateData(principalValue, finalValue, time, monthlyRate, checkbox, e
         const table = priceTable(principalValue, time, monthlyRate, entryValue, installmentValue);
         populateTable(table, finalValue, principalValue, entryValue);
         const coefficient = calculatefinancingCoefficient(monthlyRate, time);
-        showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, coefficient, valueToBack, monthsToBack, backedValue);
+        showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, coefficient, valueToBack, monthsToBack, backedValue, entryValue);
 
     }else if(finalValue === 0.0){
         const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate, entryValue, finalValue);
@@ -74,7 +74,7 @@ function validateData(principalValue, finalValue, time, monthlyRate, checkbox, e
         const table = priceTable(principalValue, time, monthlyRate, entryValue, installmentValue);
         populateTable(table, finalValue, principalValue, entryValue);
         const coefficient = calculatefinancingCoefficient(monthlyRate, time);
-        showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, coefficient, valueToBack, monthsToBack, backedValue);
+        showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, coefficient, valueToBack, monthsToBack, backedValue, entryValue);
 
     }else if (principalValue === 0.0){
         const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate, entryValue, finalValue);
@@ -82,7 +82,7 @@ function validateData(principalValue, finalValue, time, monthlyRate, checkbox, e
         const table = priceTable(principalValue, time, monthlyRate, entryValue, installmentValue);
         populateTable(table, finalValue, principalValue, entryValue);
         const coefficient = calculatefinancingCoefficient(monthlyRate, time);
-        showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, coefficient, valueToBack, monthsToBack, backedValue);
+        showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, coefficient, valueToBack, monthsToBack, backedValue, entryValue);
     };
 
 }
@@ -239,7 +239,7 @@ function populateTable(tableData, finalValue, principalValue, entryValue) {
     cell0.textContent = "0";
 }
 
-function showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, FCoefficient, valueToBack, monthsToBack, backedValue){
+function showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, FCoefficient, valueToBack, monthsToBack, backedValue, entryValue){
     const importantDataHTML1 = 
         `<p class="title">Important data</p>
         <p>Parcelamento: ${time} meses </p>
@@ -251,7 +251,8 @@ function showData(monthlyRate, principalValue, finalValue, time, installmentValu
         `<p class="title">Important data</p>
         <p>Valor Financiado: R$ ${principalValue.toFixed(2)} </p>
         <p>Valor Final: R$ ${finalValue.toFixed(2)} </p>
-        <p>Entrada: ${checkbox.checked}`;
+        <p>Entrada: ${checkbox.checked}
+        <p>Valor da Entrada: ${entryValue.toFixed(2)}`;
 
     const importantDataHTML3 = 
         `<p class="title">Important data</p>
