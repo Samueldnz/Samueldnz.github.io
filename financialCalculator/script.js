@@ -4,6 +4,7 @@ const tableContainer = document.getElementById("table-container");
 const dataContainer = document.getElementById("data-container");
 const importantData1 = document.getElementById("important-data");
 const importantData2 = document.getElementById("important-data2");
+const importantData3 = document.getElementById("important-data3");
 const checkbox = document.getElementById("idp");
 const entryDIV = document.getElementById("entryDIV");
 
@@ -31,6 +32,8 @@ function validateForm(event){
     let finalValue = parseFloat(document.getElementById("ipp").value);
     let time = parseFloat(document.getElementById("parc").value);
     let entryValue = parseFloat(document.getElementById("financingEntry").value);
+    let monthsToBack = parseFloat(document.getElementById("mtb").value);
+    let valueToBack = parseFloat(document.getElementById("ipb").value);
 
     if (monthlyRate === 0 && principalValue === 0) {
         errorMessage += "<p>Taxa de juros e valor financiado não podem ser ambos nulos.</p>";
@@ -47,32 +50,40 @@ function validateForm(event){
     }else{
         document.getElementById("successMessage").style.display = "block";
         document.getElementById("errorMessage").style.display = "none";
-        validateData(principalValue, finalValue, time, monthlyRate, checkbox, entryValue);
+        validateData(principalValue, finalValue, time, monthlyRate, checkbox, entryValue, monthsToBack, valueToBack);
         event.preventDefault();
     }
 };
 
-function validateData(principalValue, finalValue, time, monthlyRate, checkbox, entryValue){
+function validateData(principalValue, finalValue, time, monthlyRate, checkbox, entryValue, monthsToBack, valueToBack){
+
+    const backedValue = calculateBackedValue(monthsToBack, valueToBack, monthsToBack); 
 
     if(monthlyRate === 0.0){
         monthlyRate = calculateMonthlyInterestRate(principalValue, finalValue, time, checkbox);
-        const table = priceTable(principalValue, time, monthlyRate, finalValue, checkbox, entryValue);
+        const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate, entryValue, finalValue);
+        const table = priceTable(principalValue, time, monthlyRate, entryValue, installmentValue);
         populateTable(table, finalValue, principalValue, entryValue);
-        fieldset.style.display = "none";
-        tableContainer.style.display = "flex";
-        dataContainer.style.display = "flex";
+        const coefficient = calculatefinancingCoefficient(monthlyRate, time);
+        showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, coefficient, valueToBack, monthsToBack, backedValue);
 
     }else if(finalValue === 0.0){
-        const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate, entryValue);
+        const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate, entryValue, finalValue);
         finalValue = calculateFinalValue(installmentValue, time, entryValue);
-        const table = priceTable(principalValue, time, monthlyRate, finalValue, checkbox, entryValue);
+        const table = priceTable(principalValue, time, monthlyRate, entryValue, installmentValue);
         populateTable(table, finalValue, principalValue, entryValue);
-        fieldset.style.display = "none";
-        tableContainer.style.display = "flex";
-        dataContainer.style.display = "flex";
+        const coefficient = calculatefinancingCoefficient(monthlyRate, time);
+        showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, coefficient, valueToBack, monthsToBack, backedValue);
+
     }else if (principalValue === 0.0){
-        // fazer alguma coisa aqui
+        const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate, entryValue, finalValue);
+        principalValue = calculatePrincipalValue(monthlyRate, time, installmentValue);
+        const table = priceTable(principalValue, time, monthlyRate, entryValue, installmentValue);
+        populateTable(table, finalValue, principalValue, entryValue);
+        const coefficient = calculatefinancingCoefficient(monthlyRate, time);
+        showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, coefficient, valueToBack, monthsToBack, backedValue);
     };
+
 }
 
 function calculateEquationValue(principalValue, finalValue, interestRate, checkbox, time){
@@ -143,7 +154,10 @@ function calculateFinalValue(installmentValue, numberOfInstallment, entryValue){
 // - principalValue: The initial principal amount borrowed.
 // - monthlyRate: The monthly interest rate as a percentage.
 // Returns: The value of each installment.
-function calculateInstallmentValue(time, principalValue, monthlyRate, entryValue){
+function calculateInstallmentValue(time, principalValue, monthlyRate, entryValue, finalValue){
+    if(principalValue === 0.0){
+        return finalValue/time;
+    }
     const fator = Math.pow(1+monthlyRate/100, time);
     const installmentValue = ((principalValue-entryValue)*(monthlyRate/100)*fator)/(fator - 1);
     return installmentValue;
@@ -156,9 +170,8 @@ function calculateInstallmentValue(time, principalValue, monthlyRate, entryValue
 // - time: The total number of installments.
 // - monthlyRate: The monthly interest rate as a percentage.
 // Returns: An array of objects representing each installment's details.
-function priceTable(principalValue, time, monthlyRate, finalValue, checkbox, entryValue){
+function priceTable(principalValue, time, monthlyRate, entryValue, installmentValue){
 
-    const installmentValue = calculateInstallmentValue(time, principalValue, monthlyRate, entryValue);
     const priceTable = [];
 
     let outstandingBalance = principalValue-entryValue;
@@ -176,7 +189,6 @@ function priceTable(principalValue, time, monthlyRate, finalValue, checkbox, ent
             outstandingBalance
         });
     }
-    showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, calculatefinancingCoefficient(monthlyRate, time));
     return priceTable;
 }
 
@@ -226,7 +238,7 @@ function populateTable(tableData, finalValue, principalValue, entryValue) {
     cell0.textContent = "0";
 }
 
-function showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, FCoefficient){
+function showData(monthlyRate, principalValue, finalValue, time, installmentValue, checkbox, FCoefficient, valueToBack, monthsToBack, backedValue){
     const importantDataHTML1 = 
         `<p class="title">Important data</p>
         <p>Parcelamento: ${time} meses </p>
@@ -238,11 +250,20 @@ function showData(monthlyRate, principalValue, finalValue, time, installmentValu
         `<p class="title">Important data</p>
         <p>Valor Financiado: R$ ${principalValue.toFixed(2)} </p>
         <p>Valor Final: R$ ${finalValue.toFixed(2)} </p>
-        <p>Valor a Voltar: 0.0 </p>
         <p>Entrada: ${checkbox.checked}`;
+
+    const importantDataHTML3 = 
+        `<p class="title">Important data</p>
+        <p>Valor a Voltar: R$ ${valueToBack.toFixed(2)} </p>
+        <p>Meses a Voltar: ${monthsToBack} </p>
+        <p>Valor Presente: R$ ${backedValue.toFixed(2)}</p>`;
 
     importantData1.innerHTML = importantDataHTML1;
     importantData2.innerHTML = importantDataHTML2;
+    importantData3.innerHTML = importantDataHTML3;
+    fieldset.style.display = "none";
+    tableContainer.style.display = "flex";
+    dataContainer.style.display = "flex";
 }
 
 function calculatefinancingCoefficient(monthlyRate, time){
@@ -258,6 +279,16 @@ function displayEntryDIV(){
     }
 };
 
+function calculateBackedValue(monthsToBack, valueToBack, monthlyRate){
+    const fator = Math.pow(1+monthlyRate/100, monthsToBack);
+    return valueToBack/fator;
+}
+
+function calculatePrincipalValue(monthlyRate, time, installmentValue){
+    const fator = Math.pow(1+monthlyRate/100, -time);
+    const principalValue = installmentValue * ((1-fator)/(monthlyRate/100));
+    return principalValue;
+}
 
 submitButton.addEventListener("click", validateForm);
 checkbox.addEventListener("change", displayEntryDIV);
