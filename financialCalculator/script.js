@@ -12,6 +12,7 @@ entryDIV.style.display = "none";
 
 tableContainer.style.display = "none";
 dataContainer.style.display = "none";
+importantData3.style.display = "none";
 
 function messageError(errorMessage, event) {
     document.getElementById("errorMessage").innerHTML = errorMessage;
@@ -260,7 +261,11 @@ function showData(monthlyRate, principalValue, finalValue, time, installmentValu
 
     importantData1.innerHTML = importantDataHTML1;
     importantData2.innerHTML = importantDataHTML2;
-    importantData3.innerHTML = importantDataHTML3;
+
+    if(valueToBack !== 0){
+        importantData3.innerHTML = importantDataHTML3;
+        importantData3.style.display = "block";
+    }
     fieldset.style.display = "none";
     tableContainer.style.display = "flex";
     dataContainer.style.display = "flex";
