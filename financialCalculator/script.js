@@ -7,8 +7,10 @@ const importantData2 = document.getElementById("important-data2");
 const importantData3 = document.getElementById("important-data3");
 const checkbox = document.getElementById("idp");
 const entryDIV = document.getElementById("entryDIV");
+const backButton = document.getElementById("buttonDIV");
 
 entryDIV.style.display = "none";
+backButton.style.display = "none";
 
 tableContainer.style.display = "none";
 dataContainer.style.display = "none";
@@ -270,6 +272,7 @@ function showData(monthlyRate, principalValue, finalValue, time, installmentValu
     fieldset.style.display = "none";
     tableContainer.style.display = "flex";
     dataContainer.style.display = "flex";
+    backButton.style.display = "flex";
 }
 
 function calculatefinancingCoefficient(monthlyRate, time){
@@ -298,3 +301,6 @@ function calculatePrincipalValue(monthlyRate, time, installmentValue){
 
 submitButton.addEventListener("click", validateForm);
 checkbox.addEventListener("change", displayEntryDIV);
+backButton.addEventListener("click", function(){
+    window.open("index.html", "_self");
+});
