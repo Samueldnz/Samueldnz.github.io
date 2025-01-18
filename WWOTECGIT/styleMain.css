@@ -1,0 +1,151 @@
+
+/* Adicionar estilo global para garantir que as sections sejam exibidas verticalmente */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Espaçamento entre as seções */
+}
+
+/* Garantir que todas as sections ocupem 100% da largura */
+section {
+    width: 100%;
+    padding: 50px 20px;
+}
+
+
+#services {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#servicesContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#serviceTitle h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+#servicesCardBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    flex: 1 1 calc(25% - 20px);
+    max-width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card .icon {
+    color: #ffffff;
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+
+
+#about {
+    padding: 50px 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+#aboutContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#aboutText {
+    margin-bottom: 40px;
+}
+
+#aboutTitle h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#aboutText p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#aboutCardBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.aboutCard {
+    background: #ffffff;
+    color: #333333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33% - 20px);
+    max-width: 300px;
+    min-width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.aboutCard:hover {
+    transform: translateY(-10px);
+}
+
+.aboutCard img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.aboutCard h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 15px 0;
+    margin: 0;
+}
+
+.aboutCard p {
+    padding: 20px;
+    font-size: 1rem;
+    color: #666666;
+    line-height: 1.6;
+}

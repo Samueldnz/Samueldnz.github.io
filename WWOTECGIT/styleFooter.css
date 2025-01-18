@@ -1,0 +1,20 @@
+footer {
+    text-align: center;
+    padding: 20px;
+}
+footer p {
+    margin: 10px 0;
+}
+footer .social-buttons {
+    margin: 10px 0;
+}
+footer .social-buttons a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #555;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+footer .social-buttons a:hover {
+    color: #0077b5; /* Example hover color, adjust based on branding */
+}
