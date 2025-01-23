@@ -14,14 +14,22 @@
 
     <!-- Navbar -->
     <nav id="navMenu">
-        <div class="logo"><a href="">WWOTEC</a></div>
-        <div class="menu">
-            <button class="nav-btn hover1 hover-alternativo">Home</button>
-            <button class="nav-btn hover1 hover-alternativo">About</button>
-            <button class="nav-btn hover1 hover-alternativo">Services</button>
-            <button class="nav-btn hover1 hover-alternativo">Contact</button>
+        <div class="logo">
+          <a href="">WWOTEC</a>
         </div>
-    </nav>    
+        <div class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu">
+          <button class="nav-btn firstColor secondColor">Home</button>
+          <button class="nav-btn firstColor secondColor">About</button>
+          <button class="nav-btn firstColor secondColor">Services</button>
+          <button class="nav-btn firstColor secondColor">Contact</button>
+        </div>
+    </nav>
+          
 
     <!-- Header -->
     <header>
@@ -30,36 +38,39 @@
             Your browser does not support the video format.
         </video>
         <div class="overlay"></div>
-        <div class="content">
+        <div class="headerContent">
             <h1>Transform Your World</h1>
             <p>Outsourcing Knowledge, technology and innovation!</p>
-            <a id="btn-change" href="#services" class="btn">Learn More</a>
+            <a id="btn-change" href="#services" class="headerbtn">Learn More</a>
         </div>
     </header>
 
+    <!-- Main -->
     <main>
-        <section id="services">
+
+        <!-- Services -->
+        <section id="sectionServices">
             <div id="servicesContainer">
                 <div id="serviceTitle">
                     <h2 class="titleToggle">Principais serviços</h2>
                 </div>                
                 <div id="servicesCardBox">
-                    <div class="card">
+                    <div class="serviceCard">
                         <div class="icon toggleColor">C</div>
                         <h3 class="titleToggle">Cobrança Digital</h3>
                         <p>Por meio de um sistema próprio, 100% adaptável a cada necessidade, construímos a Estratégia de Cobrança e realizamos a comunicação entre as empresas e seus clientes, em massa, via multicanais.</p>
                     </div>
-                    <div class="card">
+                    <div class="serviceCard">
                         <div class="icon toggleColor">C</div>
                         <h3 class="titleToggle">Comunicação Digital</h3>
                         <p>Nos comunicamos com os prospects e clientes para ações de venda, retenção, e muito mais, utilizando canais convenientes e oportunos.</p>
                     </div>
-                    <div class="card">
+                    <div class="serviceCard">
                         <div class="icon toggleColor">C</div>
                         <h3 class="titleToggle">Consultoria</h3>
                         <p>Com mais de 25 anos de know-how em Crédito e Contact Center, ajudamos empresas a estruturar operações e equipes com modelos inovadores.</p>
                     </div>
-                    <div class="card">
+                    <div class="serviceCard">
                         <div class="icon toggleColor">C</div>
                         <h3 class="titleToggle">Contact Center</h3>
                         <p>Com infraestrutura moderna, sistema CRM integrado e serviços centralizados, potencializamos os resultados de Telecobrança.</p>
@@ -68,7 +79,8 @@
             </div>
         </section>
         
-        <section id="about" class="toggleColor">
+        <!-- About Us -->
+        <section id="sectionAbout" class="toggleColor">
             <div id="aboutContainer">
                 <div id="aboutText">
                     <div id="aboutTitle">
@@ -115,19 +127,59 @@
 
     <!-- Footer -->
     <footer id="footer">
-        <div>
-            <p>&copy; 2024 WorldWide Outsourcing Technological. All rights reserved.</p>
+        <!--<div class="social-icons">
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-youtube"></i>
+        </div>-->
+    
+        <div class="addressContainer">
+            <div class="address">
+                <p>Escritório Brasil</p>
+                <p>Rua José Clemente, 94, 3º andar, Centro, Niterói - RJ - CEP: 24020-105</p>
+                <p> COO Nicolar Mermier | <a href="tel:21977157671">(21) 97715-7671</a></p>
+                <p> CEO Marcos Brandão | <a href="tel:21977157671">(21) 97715-7671</a></p>
+                <p> CTO Samuel Sampaio | <a href="tel:21977157671">(21) 97715-7671</a></p>
+                
+            </div>
+            <div class="address">
+                <p>Escritório Suiça - Andrea (Exemplo)</p>
+                <p>Rua José Clemente, 94, 3º andar, Centro, Niterói - RJ - CEP: 24020-105</p>
+                <p><a href="tel:21977157671">(21) 97715-7671</a></p>
+            </div>
         </div>
-        <div class="social-buttons">
-            <a href="https://www.instagram.com/sua_empresa" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/seu_numero" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="mailto:email@suaempresa.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.youtube.com/channel/seu_canal" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.linkedin.com/company/sua_empresa" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    
+        <div class="links">
+          <a href="#">Trabalhe conosco!</a>
+          <a href="#">Política de Privacidade</a>
         </div>
-    </footer>
+    
+        <div class="legal">
+          <p>4C Digital - Serviços de Cobrança e Informações Cadastrais LTDA</p>
+          <p>FOURC SERVIÇOS DE COBRANÇA E INFORMAÇÕES CADASTRAIS LTDA. CNPJ: 40.060.386/0001-60</p>
+          <p>Todos os direitos reservados.</p>
+        </div>
+      </footer>
+    
+    <div id="floating-button">
+        <a href="https://wa.me/21977157671" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> <span class="button-text">Fale conosco!</span>
+        </a>
+    </div>
+      
 
     <script>
+        //Hamburguer Menu Code
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const menu = document.querySelector('.menu');
+
+        hamburgerMenu.addEventListener('click', () => {
+            hamburgerMenu.classList.toggle('open');
+            menu.classList.toggle('active');
+        });
+
+        //toggle color code
         const btnChange = document.getElementById('btn-change');
         const video = document.querySelector('header video');
         const navBtns = document.querySelectorAll('.nav-btn');
@@ -135,23 +187,41 @@
         const footer = document.getElementById('footer');
         const backgroundToggle = document.getElementsByClassName('toggleColor');
         const titleToggle = document.getElementsByClassName('titleToggle');
-        const borderCard = document.querySelectorAll('.card');
+        const borderCard = document.querySelectorAll('.serviceCard');
         const titleAbout = document.getElementsByClassName('titleAbout');
+        
     
         const cores = [
-            { 
+            
+            {
+                background: '#3D3D3D', // Cinza escuro
+                border: '#6E6E6E',     // Cinza médio para contraste
+                navMenuColor: '#3D3D3D98', // Cinza translúcido para o menu
+                aboutCard: '#555555'    // Cinza intermediário mais claro
+            },
+
+            {
+                background: '#C8AD6F', // Dourado suave para fundo
+                border: '#E0C78D',     // Dourado mais claro para contraste
+                navMenuColor: '#C8AD6F98', // Dourado translúcido para o menu
+                aboutCard: '#B19050'    // Dourado mais escuro para elementos destacados
+            }
+
+
+            /*{ 
                 background: '#3A8CA0', // Azul mais suave
                 border: '#75C4D3',    // Azul claro para contraste
                 navMenuColor: '#3A8CA098', // Azul translúcido para menu
                 aboutCard: '#4FA1B5'   // Azul intermediário mais vibrante
             },
+
             { 
                 background: '#E0741B', // Laranja terroso
                 border: '#F4CA70',    // Dourado claro para complementar
                 navMenuColor: '#E0741B98', // Laranja translúcido para menu
                 aboutCard: '#FF6F3C'   // Laranja mais vibrante para destaque
             },
-            /*{ 
+            { 
                 background: '#558B2F', // Verde oliva mais escuro
                 border: '#A3D786',    // Verde claro para contraste
                 navMenuColor: '#558B2F98', // Verde translúcido para menu
@@ -169,7 +239,7 @@
             }
             if (navMenu) navMenu.style.backgroundColor = navMenuColor;
             if (footer) footer.style.backgroundColor = navMenuColor;
-    
+        
             // Atualiza elementos com a classe 'toggleColor'
             Array.from(backgroundToggle).forEach((element) => {
                 element.style.backgroundColor = background;
@@ -192,11 +262,11 @@
             // Atualiza classes de hover nos botões da navegação
             navBtns.forEach((btn) => {
                 if (index === 0) {
-                    btn.classList.remove('hover-alternativo');
-                    btn.classList.add('hover1');
+                    btn.classList.remove('secondColor');
+                    btn.classList.add('firstColor');
                 } else {
-                    btn.classList.remove('hover1');
-                    btn.classList.add('hover-alternativo');
+                    btn.classList.remove('firstColor');
+                    btn.classList.add('secondColor');
                 }
             });
         }

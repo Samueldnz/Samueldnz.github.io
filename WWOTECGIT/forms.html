@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Contato</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.form-container {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: #ccc;
+}
+
+input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input {
+  margin-right: 10px;
+}
+
+.checkbox-group a {
+  color: #ff6b35;
+  text-decoration: none;
+}
+
+.checkbox-group a:hover {
+  text-decoration: underline;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background: #ff6b35;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #e65a2a;
+}
+
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Solicite um contato</h1>
+    <form id="contactForm">
+      <div class="input-group">
+        <label for="nome">Nome *</label>
+        <input type="text" id="nome" name="nome" placeholder="Por exemplo: Ana" required>
+      </div>
+      <div class="input-group">
+        <label for="sobrenome">Sobrenome *</label>
+        <input type="text" id="sobrenome" name="sobrenome" placeholder="Por exemplo: Serra" required>
+      </div>
+      <div class="input-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="Por exemplo: email@exemplo.com" required>
+      </div>
+      <div class="input-group">
+        <label for="empresa">Empresa *</label>
+        <input type="text" id="empresa" name="empresa" placeholder="Insira o nome da empresa" required>
+      </div>
+      <div class="input-group">
+        <label for="telefone">Telefone *</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="Por exemplo: 1134567890" required>
+      </div>
+      <div class="input-group">
+        <label for="cargo">Cargo *</label>
+        <input type="text" id="cargo" name="cargo" placeholder="Por exemplo: Diretor" required>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="condicoes" name="condicoes" required>
+        <label for="condicoes">Concordo com as <a href="#">Condições de Dados</a></label>
+      </div>
+      <button type="submit" class="submit-btn">Enviar</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  const nome = document.getElementById('nome').value;
+  const sobrenome = document.getElementById('sobrenome').value;
+  const email = document.getElementById('email').value;
+  const empresa = document.getElementById('empresa').value;
+  const telefone = document.getElementById('telefone').value;
+  const cargo = document.getElementById('cargo').value;
+  const condicoes = document.getElementById('condicoes').checked;
+
+  if (condicoes) {
+    alert(`Obrigado, ${nome} ${sobrenome}! Seus dados foram enviados com sucesso.`);
+  } else {
+    alert('Você deve concordar com as condições de dados para prosseguir.');
+  }
+});
+
+  </script>
+</body>
+</html>

@@ -1,19 +1,18 @@
 
-/* Adicionar estilo global para garantir que as sections sejam exibidas verticalmente */
+/*Global Style*/
 main {
     display: flex;
     flex-direction: column;
-    gap: 50px; /* Espaçamento entre as seções */
+    gap: 50px;
 }
 
-/* Garantir que todas as sections ocupem 100% da largura */
 section {
     width: 100%;
     padding: 50px 20px;
-}
+}/*END*/
 
-
-#services {
+/*Section Services*/
+#sectionServices {
     background-color: #f8f8f8;
     padding: 50px 20px;
     text-align: center;
@@ -37,22 +36,21 @@ section {
     justify-content: center;
 }
 
-.card {
+.serviceCard {
     background-color: #ffffff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    flex: 1 1 calc(25% - 20px);
-    max-width: 300px;
+    width: 250px;
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease;
 }
 
-.card:hover {
+.serviceCard:hover {
     transform: translateY(-10px);
 }
 
-.card .icon {
+.serviceCard .icon {
     color: #ffffff;
     font-size: 2rem;
     width: 60px;
@@ -64,20 +62,20 @@ section {
     justify-content: center;
 }
 
-.card h3 {
+.serviceCard h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
 }
 
-.card p {
+.serviceCard p {
     font-size: 1rem;
     color: #666666;
     line-height: 1.6;
-}
+}/*END*/
 
 
-
-#about {
+/*Section About*/
+#sectionAbout {
     padding: 50px 20px;
     color: #ffffff;
     text-align: center;
@@ -118,9 +116,7 @@ section {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(33% - 20px);
-    max-width: 300px;
-    min-width: 200px;
+    width: 300px;
     text-align: center;
     transition: transform 0.3s ease;
 }
