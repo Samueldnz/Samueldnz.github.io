@@ -35,14 +35,28 @@
   
     /*LOGO*/
     .logo {
-        font-size: 24px;
-        font-weight: bold;
+        display: flex;
+        align-items: center; /* Alinha verticalmente */
+        gap: 20px; /* Espaço entre a logo e o texto */
+    }
+
+    .logo img {
+        height: 50px; /* Ajuste conforme necessário */
+        width: auto;
+        cursor: pointer; /* Indica que é clicável */
     }
   
     .logo a {
         text-decoration: none;
         color: inherit;
     }/*END*/
+
+    .company-name {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        white-space: nowrap; /* Evita quebra de linha */
+    }
   
     /*Menu Buttons*/
     .menu {
@@ -183,7 +197,7 @@
         color: white;
         text-decoration: none;
         border-radius: 40px;
-        font-size: 20px;
+        font-size: 15px;
         transition: all 0.7s ease-in-out;
     } 
 

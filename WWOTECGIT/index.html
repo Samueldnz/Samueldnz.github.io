@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout Example</title>
-    <link rel="stylesheet" href="styleNav.css">
-    <link rel="stylesheet" href="styleAside.css">
-    <link rel="stylesheet" href="styleMain.css"> 
-    <link rel="stylesheet" href="styleFooter.css">
+    <title>WWOTEC Outsourcing</title>
+    <link rel="stylesheet" href="src/style/styleNav.css">
+    <link rel="stylesheet" href="src/style/styleMain.css">
+    <link rel="stylesheet" href="src/style/styleAside.css"> 
+    <link rel="stylesheet" href="src/style/styleFooter.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="src/midia/logo.ico" type="image/x-icon">
 </head>
 <body>
 
     <!-- Navbar -->
     <nav id="navMenu">
         <div class="logo">
-          <a href="">WWOTEC</a>
+            <a href="index.html">
+                <img src="src/midia/logo.png" alt="WWOTEC Logo">
+            </a>
+            <span class="company-name">WWOTEC</span>
         </div>
         <div class="hamburger-menu">
           <span></span>
@@ -23,25 +27,25 @@
           <span></span>
         </div>
         <div class="menu">
-          <button class="nav-btn firstColor secondColor">Home</button>
-          <button class="nav-btn firstColor secondColor">About</button>
-          <button class="nav-btn firstColor secondColor">Services</button>
-          <button class="nav-btn firstColor secondColor">Contact</button>
+            <button class="nav-btn firstColor secondColor" onclick="scrollToSection('header')">Home</button>
+            <button class="nav-btn firstColor secondColor" onclick="scrollToSection('sectionAbout')">About</button>
+            <button class="nav-btn firstColor secondColor" onclick="scrollToSection('sectionServices')">Services</button>
+            <button class="nav-btn firstColor secondColor" onclick="scrollToSection('asideContact')">Contact</button>
         </div>
     </nav>
           
 
     <!-- Header -->
-    <header>
+    <header id="header">
         <video autoplay muted loop>
-            <source src="videoHeader.mp4" type="video/mp4">
+            <source src="src/midia/videoHeader.mp4" type="video/mp4">
             Your browser does not support the video format.
         </video>
         <div class="overlay"></div>
         <div class="headerContent">
-            <h1>Transform Your World</h1>
+            <h1>Transform Your World!</h1>
             <p>Outsourcing Knowledge, technology and innovation!</p>
-            <a id="btn-change" href="#services" class="headerbtn">Learn More</a>
+            <button id="btn-change" onclick="scrollToSection('sectionServices')" class="headerbtn">Learn More</button>
         </div>
     </header>
 
@@ -52,28 +56,28 @@
         <section id="sectionServices">
             <div id="servicesContainer">
                 <div id="serviceTitle">
-                    <h2 class="titleToggle">Principais serviços</h2>
+                    <h2 class="titleToggle">MAIN SERVICES</h2>
                 </div>                
                 <div id="servicesCardBox">
                     <div class="serviceCard">
                         <div class="icon toggleColor">C</div>
-                        <h3 class="titleToggle">Cobrança Digital</h3>
-                        <p>Por meio de um sistema próprio, 100% adaptável a cada necessidade, construímos a Estratégia de Cobrança e realizamos a comunicação entre as empresas e seus clientes, em massa, via multicanais.</p>
+                        <h3 class="titleToggle">IT Solutions</h3>
+                        <p>We offer expert IT services, including website and application development, database management, and tailored digital solutions. High-performance systems to meet your needs, from concept to deployment.</p>
                     </div>
                     <div class="serviceCard">
                         <div class="icon toggleColor">C</div>
-                        <h3 class="titleToggle">Comunicação Digital</h3>
-                        <p>Nos comunicamos com os prospects e clientes para ações de venda, retenção, e muito mais, utilizando canais convenientes e oportunos.</p>
+                        <h3 class="titleToggle">End-to-End Project</h3>
+                        <p>From concept to execution, we design, optimize, and refine projects, transforming ideas into functional models and full-scale plants in industrial design, architecture, and engineering.</p>
                     </div>
                     <div class="serviceCard">
                         <div class="icon toggleColor">C</div>
-                        <h3 class="titleToggle">Consultoria</h3>
-                        <p>Com mais de 25 anos de know-how em Crédito e Contact Center, ajudamos empresas a estruturar operações e equipes com modelos inovadores.</p>
+                        <h3 class="titleToggle">Expert Consultancy</h3>
+                        <p>Our experts work closely with you, offering insights and support through seamless digital collaboration. Elevate your business with expert guidance, anytime, anywhere.</p>
                     </div>
                     <div class="serviceCard">
                         <div class="icon toggleColor">C</div>
-                        <h3 class="titleToggle">Contact Center</h3>
-                        <p>Com infraestrutura moderna, sistema CRM integrado e serviços centralizados, potencializamos os resultados de Telecobrança.</p>
+                        <h3 class="titleToggle">Digital Billing</h3>
+                        <p>Through a proprietary system that is 100% adaptable to each need, we build the Collection Strategy and facilitate mass communication between companies and their customers via multiple channels.</p>
                     </div>
                 </div>
             </div>
@@ -84,45 +88,68 @@
             <div id="aboutContainer">
                 <div id="aboutText">
                     <div id="aboutTitle">
-                        <h2>Quem somos?</h2>
+                        <h2>ABOUT US</h2>
                     </div>
                     <p>
-                        A experiência de mais de 25 anos dos sócios fundadores, aliada à veia tecnológica de todos os envolvidos no processo de criação, faz da nossa empresa uma referência em serviços inovadores e de alto valor agregado aos seus clientes.
+                        At WWOTEC, we specialize in delivering top-tier outsourcing solutions that drive efficiency, innovation, and growth. With a team of highly skilled professionals, we provide tailored services across industrial design, architecture, engineering - mechanic, civil, chemical - customer support and IT development, helping businesses optimize operations and reduce costs.
                     </p>
                 </div>
                 <div id="aboutCardBox">
                     <div id="mission" class="aboutCard">
-                        <img src="missao.jpg" alt="Missão">
-                        <h3 class="titleAbout">MISSÃO</h3>
-                        <p>Oferecer soluções inovadoras e personalizadas que agreguem valor aos nossos clientes e parceiros.</p>
+                        <img src="src/midia/missao.jpg" alt="Missão">
+                        <h3 class="titleAbout">MISSION</h3>
+                        <p>We are committed to delivering high-quality, cost-effective outsourcing solutions that optimize business operations. Through technology, expertise, and a customer-centric approach we help organizations enhance productivity and focus on their core strengths.</p>
                     </div>
                     <div id="vision" class="aboutCard">
-                        <img src="visao.jpg" alt="Visão">
-                        <h3 class="titleAbout">VISÃO</h3>
-                        <p>Ser reconhecida como líder em inovação, entregando excelência em todos os serviços que oferecemos.</p>
+                        <img src="src/midia/visao.jpg" alt="Visão">
+                        <h3 class="titleAbout">VISION</h3>
+                        <p>To be a globally recognized leader in outsourcing solutions, empowering businesses of all sizes with innovative, efficient, and scalable services that not only drive sustainable growth but also foster long-term success.</p>
                     </div>
                     <div id="values" class="aboutCard">
-                        <img src="valores.jpg" alt="Valores">
-                        <h3 class="titleAbout">VALORES</h3>
-                        <p>Integridade, inovação, foco no cliente, trabalho em equipe e compromisso com resultados.</p>
+                        <img src="src/midia/valores.jpg" alt="Valores">
+                        <h3 class="titleAbout">VALUES</h3>
+                        <p>We are committed to excellence, constantly striving for the highest standards in service and innovation. Integrity is at the core of our business with a strong customer focus, we embrace innovation, leveraging cutting-edge technologies and continuous improvement to stay ahead.</p>
                     </div>
+                    
                 </div>
             </div>
         </section>
     </main>
     
 
-    <aside>
-        <img src="backgroundContats4.jpg" alt="contatsBackground">
+    <aside id="asideContact">
+        <img src="src/midia/WWOTEC.png" alt="contatsBackground">
         <div class="overlay"></div>
         <div class="form-container">
-            <form action="https://example.com/form-handler" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="tel" name="phone" placeholder="Your Phone" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <button type="submit">Submit</button>
+            <h1>Request a contact</h1>
+            <form id="contactForm">
+                <div class="input-group">
+                    <label for="nome">Full Name*</label>
+                    <input type="text" id="nome" name="nome" placeholder="For example: John" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="For example: youremail@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" placeholder="Enter your company name">
+                </div>
+                <div class="input-group">
+                    <label for="phonenumber">Phone Number*</label>
+                    <input type="tel" id="phonenumber" name="phonenumber" placeholder="For example: +551134567890" required>
+                </div>
+                <div class="input-group">
+                    <label for="message">Text/Your Need*</label>
+                    <input type="text" id="message" name="message" placeholder="For example: Need a website from zero" required>
+                </div>            
+                <div class="checkbox-group">
+                    <input type="checkbox" id="conditions" name="conditions" required>
+                    <label for="conditions">I agree with the <a href="#">Data Conditions</a></label>
+                </div>
+                <input id="submit-btn" type="submit" class="submit-btn" name="submit" value="Submit">           
             </form>
-        </div>
+          </div>
     </aside>
 
     <!-- Footer -->
@@ -136,35 +163,33 @@
     
         <div class="addressContainer">
             <div class="address">
-                <p>Escritório Brasil</p>
-                <p>Rua José Clemente, 94, 3º andar, Centro, Niterói - RJ - CEP: 24020-105</p>
-                <p> COO Nicolar Mermier | <a href="tel:21977157671">(21) 97715-7671</a></p>
-                <p> CEO Marcos Brandão | <a href="tel:21977157671">(21) 97715-7671</a></p>
-                <p> CTO Samuel Sampaio | <a href="tel:21977157671">(21) 97715-7671</a></p>
-                
+                <p style="font-weight: bold;">BRAZIL</p>
+                <p> Commercial - Nicolar Mermier | <a href="https://wa.me/+5521997421540" target="_blank">+55 21 99742-1540</a></p>
+                <p> Administrative - Marcos Brandão | <a href="https://wa.me/+5521972739181" target="_blank">+55 21 97273-9181</a></p>
+                <p> Technical - Samuel Sampaio | <a href="https://wa.me/+5521951111863" target="_blank">+55 21 95111-1863</a></p>
             </div>
             <div class="address">
-                <p>Escritório Suiça - Andrea (Exemplo)</p>
-                <p>Rua José Clemente, 94, 3º andar, Centro, Niterói - RJ - CEP: 24020-105</p>
-                <p><a href="tel:21977157671">(21) 97715-7671</a></p>
+                <P style="font-weight: bold;">SWITZERLAND</P>
+                <p>CEO - Andreas Nicolaysen | <a href="https://wa.me/+41763950008" target="_blank">+41 76 395 00 08</a></p>
             </div>
         </div>
-    
+        
         <div class="links">
-          <a href="#">Trabalhe conosco!</a>
-          <a href="#">Política de Privacidade</a>
+            <a href="https://wa.me/+5521951111863?text=Hello%20Samuel,%20I'm%20interested%20in%20working%20at%20WWOTEC!." target="_blank">Work with us!</a>
+            <a href="privacypolicy.pdf" target="_blank">Privacy Policy</a>
         </div>
-    
-        <div class="legal">
-          <p>4C Digital - Serviços de Cobrança e Informações Cadastrais LTDA</p>
-          <p>FOURC SERVIÇOS DE COBRANÇA E INFORMAÇÕES CADASTRAIS LTDA. CNPJ: 40.060.386/0001-60</p>
-          <p>Todos os direitos reservados.</p>
-        </div>
-      </footer>
+        
+        <!--<div class="legal">
+            <p>4C Digital - Collection and Registration Information Services LTD</p>
+            <p>FOURC COLLECTION AND REGISTRATION INFORMATION SERVICES LTD. CNPJ: 40.060.386/0001-60</p>
+            <p>All rights reserved.</p>
+        </div>-->
+        
+    </footer>
     
     <div id="floating-button">
-        <a href="https://wa.me/21977157671" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i> <span class="button-text">Fale conosco!</span>
+        <a href="https://wa.me/+41763950008" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> <span class="button-text">Talk with us!</span>
         </a>
     </div>
       
@@ -189,6 +214,7 @@
         const titleToggle = document.getElementsByClassName('titleToggle');
         const borderCard = document.querySelectorAll('.serviceCard');
         const titleAbout = document.getElementsByClassName('titleAbout');
+        const submitBTN = document.getElementById('submit-btn');
         
     
         const cores = [
@@ -206,27 +232,6 @@
                 navMenuColor: '#C8AD6F98', // Dourado translúcido para o menu
                 aboutCard: '#B19050'    // Dourado mais escuro para elementos destacados
             }
-
-
-            /*{ 
-                background: '#3A8CA0', // Azul mais suave
-                border: '#75C4D3',    // Azul claro para contraste
-                navMenuColor: '#3A8CA098', // Azul translúcido para menu
-                aboutCard: '#4FA1B5'   // Azul intermediário mais vibrante
-            },
-
-            { 
-                background: '#E0741B', // Laranja terroso
-                border: '#F4CA70',    // Dourado claro para complementar
-                navMenuColor: '#E0741B98', // Laranja translúcido para menu
-                aboutCard: '#FF6F3C'   // Laranja mais vibrante para destaque
-            },
-            { 
-                background: '#558B2F', // Verde oliva mais escuro
-                border: '#A3D786',    // Verde claro para contraste
-                navMenuColor: '#558B2F98', // Verde translúcido para menu
-                aboutCard: '#7CB342'   // Verde médio vibrante
-            }*/
         ];
     
         function atualizarEstilos(index) {
@@ -239,7 +244,11 @@
             }
             if (navMenu) navMenu.style.backgroundColor = navMenuColor;
             if (footer) footer.style.backgroundColor = navMenuColor;
-        
+            if (submitBTN) {
+                submitBTN.style.background = background;
+                submitBTN.style.borderColor = border;
+            }
+
             // Atualiza elementos com a classe 'toggleColor'
             Array.from(backgroundToggle).forEach((element) => {
                 element.style.backgroundColor = background;
@@ -277,9 +286,26 @@
             const index = Math.floor(tempoAtual / 10) % cores.length;
             atualizarEstilos(index);
         }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
     
         // Atualiza a cada 500ms para refletir mudanças no tempo do vídeo
         setInterval(alternarCorSincronizada, 500);
+
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o recarregamento da página
+
+            let formData = new FormData(this);
+
+            fetch("config.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(document.getElementById("contactForm").reset());
+        });
     </script>
     
     
