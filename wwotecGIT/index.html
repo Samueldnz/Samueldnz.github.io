@@ -14,20 +14,20 @@
     <body>
 
         <!-- Navbar -->
-        <nav id="navMenu">
-            <div class="logo">
-                <a class="ancora-logo" href="index.html">
+        <nav id="navMenu" class="backgroundToggle">
+            <div id="logo">
+                <a href="index.html">
                     <img src="src/midia/logo.png" alt="WWOTEC Logo">
-                    <span class="company-name">WWOTEC</span>
+                    <span id="company-name">WWOTEC</span>
                 </a>
                 
             </div>
-            <div class="hamburger-menu">
+            <div id="hamburger-menu">
             <span></span>
             <span></span>
             <span></span>
             </div>
-            <div class="menu">
+            <div id="menu">
                 <button class="nav-btn firstColor secondColor" onclick="scrollToSection('header')">Home</button>
                 <button class="nav-btn firstColor secondColor" onclick="scrollToSection('sectionAbout')">About</button>
                 <button class="nav-btn firstColor secondColor" onclick="scrollToSection('sectionServices')">Services</button>
@@ -38,21 +38,20 @@
 
         <!-- Header -->
         <header id="header">
-            <video autoplay muted loop>
+            <video id="videoHeader" autoplay muted loop>
                 <source src="src/midia/videoHeader.mp4" type="video/mp4">
                 Your browser does not support the video format.
             </video>
             <div class="overlay"></div>
-            <div class="headerContent">
+            <div id="headerContent">
                 <h1>WWOTEC</h1>
-                <h2>Outsourcing Knowledge, technology and innovation!</h2>
-                <button id="btn-change" onclick="scrollToSection('sectionServices')" class="headerbtn">Learn More</button>
+                <h2>Outsourcing Knowledge, Technology and Innovation!</h2>
+                <button id="headerBtn" onclick="scrollToSection('sectionServices')">Learn More</button>
             </div>
         </header>
 
         <!-- Main -->
         <main>
-
             <!-- Services -->
             <section id="sectionServices">
                 <div id="servicesContainer">
@@ -61,23 +60,23 @@
                     </div>                
                     <div id="servicesCardBox">
                         <div class="serviceCard">
-                            <div class="icon toggleColor">C</div>
-                            <h3 class="titleToggle">IT Solutions</h3>
+                            <div class="icon">C</div>
+                            <h3>IT Solutions</h3>
                             <p>We offer expert IT services, including website and application development, database management, and tailored digital solutions. High-performance systems to meet your needs, from concept to deployment.</p>
                         </div>
                         <div class="serviceCard">
-                            <div class="icon toggleColor">C</div>
-                            <h3 class="titleToggle">End-to-End Project</h3>
+                            <div class="icon">C</div>
+                            <h3>End-to-End Project</h3>
                             <p>From concept to execution, we design, optimize, and refine projects, transforming ideas into functional models and full-scale plants in industrial design, architecture, and engineering.</p>
                         </div>
                         <div class="serviceCard">
-                            <div class="icon toggleColor">C</div>
-                            <h3 class="titleToggle">Expert Consultancy</h3>
+                            <div class="icon">C</div>
+                            <h3>Expert Consultancy</h3>
                             <p>Our experts work closely with you, offering insights and support through seamless digital collaboration. Elevate your business with expert guidance, anytime, anywhere.</p>
                         </div>
                         <div class="serviceCard">
-                            <div class="icon toggleColor">C</div>
-                            <h3 class="titleToggle">Digital Billing</h3>
+                            <div class="icon">C</div>
+                            <h3>Digital Billing</h3>
                             <p>Through a proprietary system that is 100% adaptable to each need, we build the Collection Strategy and facilitate mass communication between companies and their customers via multiple channels.</p>
                         </div>
                     </div>
@@ -85,7 +84,7 @@
             </section>
             
             <!-- About Us -->
-            <section id="sectionAbout" class="toggleColor">
+            <section id="sectionAbout" class="backgroundToggle">
                 <div id="aboutContainer">
                     <div id="aboutText">
                         <div id="aboutTitle">
@@ -125,7 +124,7 @@
         <aside id="asideContact">
             <img src="src/midia/WWOTEC.png" alt="contatsBackground">
             <div class="overlay"></div>
-            <div class="form-container">
+            <div id="form-container">
                 <h1>Request a contact</h1>
                 <form id="contactForm">
                     <div class="input-group">
@@ -152,7 +151,9 @@
                         <input type="checkbox" id="conditions" name="conditions" required>
                         <label for="conditions">I agree with the <a href="#">Data Conditions</a></label>
                     </div>
-                    <div id="submit-group"><input id="submit-btn" type="submit" class="submit" name="submit" value="Submit"></div>           
+                    <div id="submit-group">
+                        <input id="submit-btn" type="submit" class="submit" name="submit" value="Submit">
+                    </div>           
                 </form>
             </div>
         </aside>
@@ -166,7 +167,7 @@
             <i class="fa-brands fa-youtube"></i>
             </div>-->
         
-            <div class="addressContainer">
+            <div id="addressContainer">
                 <div class="address">
                     <p style="font-weight: bold;">BRAZIL</p>
                     <p> Commercial - Nicolar Mermier | <a href="https://wa.me/+5521997421540" target="_blank">+55 21 99742-1540</a></p>
@@ -179,12 +180,12 @@
                 </div>
             </div>
             
-            <div class="links">
+            <div id="links">
                 <a href="https://wa.me/+5521951111863?text=Hello%20Samuel,%20I'm%20interested%20in%20working%20at%20WWOTEC!." target="_blank">Work with us!</a>
                 <a href="privacypolicy.pdf" target="_blank">Privacy Policy</a>
             </div>
             
-            <!--<div class="legal">
+            <!--<div id="legal">
                 <p>4C Digital - Collection and Registration Information Services LTD</p>
                 <p>FOURC COLLECTION AND REGISTRATION INFORMATION SERVICES LTD. CNPJ: 40.060.386/0001-60</p>
                 <p>All rights reserved.</p>

@@ -2,18 +2,8 @@
       text-align: center;
       padding: 20px;
   }
-  
-  .social-icons {
-      margin-bottom: 10px;
-  }
-  
-  .social-icons i {
-      margin: 0 10px;
-      font-size: 24px;
-      cursor: pointer;
-  }
 
-  .addressContainer {
+  #addressContainer {
       display: flex; /* Alinha as divs lado a lado */
       gap: 20px; /* Espaçamento entre os itens */
       justify-content: space-between; /* Espaço uniforme entre os elementos */
@@ -36,30 +26,28 @@
   }
 
 
-  
-    /* Responsividade para telas menores */
-    @media (max-width: 768px) {
-      .address {
-        flex: 1 1 100%; /* Ocupa 100% da largura da tela */
-        text-align: center; /* Centraliza o texto */
-      }
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    .address {
+      flex: 1 1 100%; /* Ocupa 100% da largura da tela */
+      text-align: center; /* Centraliza o texto */
     }
+  }
   
-
-  .links{
+  #links{
     margin-top: 20px;
     margin-bottom: 10px;
   }
 
   .address p,
-  .legal p {
+  #legal p {
     margin: 5px 0;
     font-size: 14px;
     line-height: 1.5;
     letter-spacing: 1.5px;
   }
   
-  .links a {
+  #links a {
     text-decoration: none; /* Remove o sublinhado padrão */
     color: inherit; /* Mantém a cor padrão do texto */
     display: inline-block;
@@ -67,12 +55,12 @@
     letter-spacing: 1.5px;
   }
   
-  .links a:hover {
+  #links a:hover {
     text-decoration: underline;
     font-weight: bold; /* Deixa o texto em negrito para destacar */
   }
   
-  .legal p {
+  #legal p {
     font-size: 12px;
   }
   

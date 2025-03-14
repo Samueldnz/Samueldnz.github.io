@@ -34,19 +34,19 @@
     } /*END*/
   
     /*LOGO*/
-    .logo {
+    #logo {
         display: flex;
         align-items: center; /* Alinha verticalmente */
         gap: 20px; /* Espaço entre a logo e o texto */
     }
 
-    .logo img {
+    #logo img {
         height: 50px; /* Ajuste conforme necessário */
         width: auto;
         cursor: pointer; /* Indica que é clicável */
     }
   
-    .logo a {
+    #logo a {
         display: flex;
         gap: 15px;
         align-items: center;
@@ -54,7 +54,7 @@
         color: inherit;
     }/*END*/
 
-    .company-name {
+    #company-name {
         font-family: 'Times New Roman', Times, serif;
         font-size: 26px;
         font-weight: 600;
@@ -63,18 +63,35 @@
         white-space: nowrap; /* Evita quebra de linha */
         letter-spacing: 1.5px;
     }
+    
+    /*Hamburguer Style Menu*/
+    #hamburger-menu {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
   
+    #hamburger-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transition: all 0.3s ease;
+    }/*END*/
+
+
     /*Menu Buttons*/
-    .menu {
+    #menu {
         display: flex;
         gap: 1px;
     }
   
-    .menu :first-child {
+    #menu :first-child {
         border-radius: 20px 0px 0px 20px;
     }
   
-    .menu :last-child {
+    #menu :last-child {
         border-radius: 0px 20px 20px 0px;
     }
   
@@ -88,23 +105,6 @@
         transition: background-color 0.3s ease, transform 0.3s ease;
         letter-spacing: 1.5px;
     }/*END*/
-  
-    /*Hamburguer Style Menu*/
-    .hamburger-menu {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-    }
-  
-    .hamburger-menu span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: white;
-        transition: all 0.3s ease;
-    }/*END*/
-  
   
     /*toggle color - menu button*/  
     .secondColor:hover {
@@ -123,7 +123,7 @@
         
 
     /* Header */
-    header {
+    #header {
         position: relative;
         height: 100vh;
         width: 100%;
@@ -133,7 +133,7 @@
         overflow: hidden; /* Impede vazamento de conteúdo */
     }
 
-    header video {
+    #videoHeader {
         position: absolute;
         top: 0;
         left: 0;
@@ -154,7 +154,7 @@
         z-index: 0;
     }
 
-    .headerContent {
+    #headerContent {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -164,19 +164,19 @@
         z-index: 1;
     }
 
-    .headerContent h1 {
+    #headerContent h1 {
         font-size: 70px;
         margin-bottom: 20px;
         letter-spacing: 5px;
     }
 
-    .headerContent h2 {
+    #headerContent h2 {
         font-size: 30px;
         margin-bottom: 30px;
         letter-spacing: 1.5px;
     }
 
-    .headerbtn {
+    #headerBtn {
         padding: 10px 30px;
         color: white;
         text-decoration: none;
@@ -186,7 +186,7 @@
         letter-spacing: 1.5px;
     } 
 
-    .headerbtn:hover {
+    #headerBtn:hover {
         box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.6); 
         transform: scale(1.1);
     }/*END*/
@@ -194,7 +194,7 @@
 
     /*Small screen Menu*/
     @media (max-width: 768px) {
-        .menu {
+        #menu {
             display: none;
             flex-direction: column;
             background-color: var(--primary-color);
@@ -206,38 +206,36 @@
             border-radius: 10px;
         }
   
-        .menu.active {
+        #menu.active {
         display: flex; /* show the menu when actived*/
         }
 
-        .menu :first-child {
+        #menu :first-child {
             border-radius: 0px;
         }
   
-        .menu :last-child {
+        #menu :last-child {
             border-radius: 0px;
         }
   
-        .hamburger-menu {
+        #hamburger-menu {
         display: flex;
         }
 
-        .headerContent {
+        #headerContent {
             width: 90%;
         }
 
-        .headerContent h1 {
-            font-size: 40px;
-        }
-    
-        .headerContent p {
-            font-size: 18px;
-        }
-    
-        .headerbtn {
-            font-size: 14px;
-            padding: 8px 20px;
+        #headerContent h1 {
+            font-size: 55px;
         }
 
-       
+        #headerContent h2{
+            font-size: 20px;
+        }
+    
+        #headerBtn {
+            font-size: 18px;
+            padding: 8px 20px;
+        }
     }/*END*/

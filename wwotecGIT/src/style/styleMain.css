@@ -38,7 +38,6 @@ section {
 }
 
 .serviceCard {
-    background-color: #ffffff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     flex: 1 1 250px; /* Ajuste flexível para largura */
@@ -53,7 +52,7 @@ section {
 }
 
 .serviceCard .icon {
-    color: #ffffff;
+    background-color: white;
     font-size: 2rem;
     width: 60px;
     height: 60px;
@@ -65,6 +64,7 @@ section {
 }
 
 .serviceCard h3 {
+    color: white;
     font-size: 1.5rem;
     margin-bottom: 15px;
     letter-spacing: 1.5px;
@@ -73,7 +73,7 @@ section {
 .serviceCard p {
     font-size: 1rem;
     letter-spacing: 0.5px;
-    color: #666666;
+    color: white;
     line-height: 1.6;
     text-align: justify;
 }/*END*/
