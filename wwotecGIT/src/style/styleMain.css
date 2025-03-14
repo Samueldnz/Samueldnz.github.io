@@ -1,0 +1,212 @@
+
+/*Global Style*/
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+section {
+    width: 100%;
+    padding: 50px 20px;
+}/*END*/
+
+/*Section Services*/
+#sectionServices {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#servicesContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#serviceTitle h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+#servicesCardBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.serviceCard {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    flex: 1 1 250px; /* Ajuste flexível para largura */
+    max-width: 250px; /* Limita a largura máxima do card */  /*antes era só width: 250px*/
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.serviceCard:hover {
+    transform: translateY(-10px);
+}
+
+.serviceCard .icon {
+    color: #ffffff;
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.serviceCard h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+}
+
+.serviceCard p {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    color: #666666;
+    line-height: 1.6;
+    text-align: justify;
+}/*END*/
+
+
+/*Section About*/
+#sectionAbout {
+    padding: 50px 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+#aboutContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#aboutText {
+    margin-bottom: 40px;
+}
+
+#aboutTitle h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+#aboutText p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+#aboutCardBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.aboutCard {
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: #333333;
+    overflow: hidden;
+    flex: 1 1 250px; /* Ajuste flexível para largura */
+    max-width: 250px; /* Limita a largura máxima do card */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 1115px) and (min-width: 845px){
+    .serviceCard{
+        flex: 1 1 350px; /* Ajuste flexível para largura */
+        max-width: 350px; /* Limita a largura máxima do card */
+    }
+
+    .aboutCard{
+        flex: 1 1 350px; /* Ajuste flexível para largura */
+        max-width: 350px; /* Limita a largura máxima do card */
+    }
+}
+
+.aboutCard:hover {
+    transform: translateY(-10px);
+}
+
+.aboutCard img {
+    width: 100%;
+    height: 250px;
+
+    display: block;
+}
+
+.aboutCard h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 15px 0;
+    margin: 0;
+}
+
+.aboutCard p {
+    padding: 20px;
+    font-size: 1rem;
+    color: #666666;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    #serviceTitle h2,
+    #aboutTitle h2 {
+        font-size: 2rem; /* Tamanho da fonte para telas menores */
+    }
+
+    .serviceCard h3,
+    .aboutCard h3 {
+        font-size: 1.2rem; /* Tamanho da fonte para títulos dos cards */
+    }
+
+    .serviceCard p,
+    .aboutCard p {
+        font-size: 0.9rem; /* Tamanho da fonte para textos dos cards */
+    }
+
+    #aboutText p {
+        font-size: 1rem; /* Ajuste do texto da seção Sobre */
+    }
+
+    .serviceCard,
+    .aboutCard {
+        max-width: 90%; /* Largura máxima para cards em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    #serviceTitle h2,
+    #aboutTitle h2 {
+        font-size: 1.5rem; /* Tamanho da fonte para telas muito pequenas */
+    }
+
+    .serviceCard h3,
+    .aboutCard h3 {
+        font-size: 1rem; /* Tamanho da fonte para títulos dos cards */
+    }
+
+    .serviceCard p,
+    .aboutCard p {
+        font-size: 0.8rem; /* Tamanho da fonte para textos dos cards */
+    }
+}
