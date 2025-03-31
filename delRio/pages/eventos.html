@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café DelRio</title>
+    <link rel="stylesheet" href="../style/root.css">
+    <link rel="stylesheet" href="../style/nav.css">
+    <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/footer.css">
+    <link rel="stylesheet" href="../style/eventos.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navMenu" class="backgroundToggle">
+        <div id="logo">Café DelRio</div>
+        <div id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="menu">
+            <button class="nav-btn" onclick="window.location.href='../index.html#article-one'">Home</button>
+            <button class="nav-btn" onclick="window.location.href='../index.html#galleryBox'">Services</button>
+            <button class="nav-btn" onclick="scrollToSection('asideContact')">Contact</button>
+        </div>
+    </nav>
+
+    <header id="header">
+        <video id="videoBox" autoplay muted loop>
+            <source src="../source/Cinematic Coffee - Shot on Sony FX6.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Café DelRio</h1> 
+            <h2>Descubra Sabores Incríveis</h2> 
+            <button id="btn-change" href="#produtos" class="btn">Saiba Mais</button> 
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="service">
+                <div class="service-content">
+                    <h2>Coffee Break</h2>
+                    <p>Perfeito para reuniões empresariais e eventos corporativos. Oferecemos uma seleção refinada de cafés, chás, sucos, bolos artesanais, pães de fermentação natural e mini sanduíches.</p>
+                </div>
+                <img src="https://source.unsplash.com/200x150/?coffee" alt="Coffee Break">
+            </div>
+            <div class="service">
+                <div class="service-content">
+                    <h2>Brunch</h2>
+                    <p>Uma experiência sofisticada para começar o dia com estilo. Servimos croissants, ovos mexidos cremosos, frutas frescas, queijos especiais e espumantes selecionados.</p>
+                </div>
+                <img src="https://source.unsplash.com/200x150/?brunch" alt="Brunch">
+            </div>
+            <div class="service">
+                <div class="service-content">
+                    <h2>Lunch Time</h2>
+                    <p>Almoços requintados para negócios ou eventos sociais. Cardápios personalizados com pratos gourmet, saladas frescas, massas artesanais e sobremesas irresistíveis.</p>
+                </div>
+                <img src="https://source.unsplash.com/200x150/?lunch" alt="Lunch Time">
+            </div>
+            <div class="service">
+                <div class="service-content">
+                    <h2>Eventos Personalizados</h2>
+                    <p>Transforme seu evento em uma experiência memorável. Oferecemos serviços exclusivos para aniversários, casamentos e celebrações especiais com cardápios sob medida.</p>
+                </div>
+                <img src="https://source.unsplash.com/200x150/?event" alt="Eventos Personalizados">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Empório Café & Bistrô. Todos os direitos reservados.</p>
+    </footer>
+
+    <div id="floating-button">
+        <a href="https://wa.me/+41763950008" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> <span class="button-text">Talk with us!</span>
+        </a>
+    </div>
+
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/scriptNav.js"></script>
+    <script src="../scripts/torrefacao.js"></script>
+</body>
+</html>

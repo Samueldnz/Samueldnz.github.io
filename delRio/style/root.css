@@ -1,0 +1,44 @@
+:root {
+    --background-color: #fdf7e9;
+    --primary-color: #6b4f4f;
+    --secondary-color: #d9c7ac;
+    --express-brown: #322016;
+    --accent-color: #b98b73;
+    --text-color: #333;
+    --heading-font: 'Georgia', serif;
+    --body-font: 'Arial', sans-serif;
+
+    --caramelo-claro1: #D9A673;  /*destaques secundários*/
+    --marrom-cafe1: #323016; /*textos e elementos neutros*/
+    --terracota-suave1: #C1775D; /*botões e destaques*/
+    --bege-baunilla1: #F3E5AB;
+    --verde-olivaclaro1: #A3A847; /*icones, links, decorações*/
+    --branco-cremoso1: #FAF3E0; /*fundo principal*/
+
+    --bege-amendoado2: #E3CBA6; /*fundo principal*/
+    --creme-latte3: #F6E5D5; 
+    --caramelo2: #D9A679; /*seções ou detalhes de fundo*/
+    --terracota-suave3: #B76E54;
+    --verde-olivasuave2: #A5A58D; /*destaques suaves, links, botões, elementos visuais*/
+    --azul-petroleo2: #446A76;
+    --marrom-expresso: #4E342E; /*textos principais e botões*/
+
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: #f5f5f5;
+    line-height: 1.6;
+}

@@ -1,0 +1,82 @@
+[
+    {
+        "nome": "Cappuccino",
+        "origem": "Itália",
+        "descricao": "Café espresso com leite vaporizado e espuma cremosa.",
+        "ingredientes": ["Café espresso", "Leite vaporizado", "Espuma de leite"],
+        "valor": 18.00,
+        "imagem": "../source/cafenote.jpg"
+    },
+    {
+        "nome": "Latte Macchiato",
+        "origem": "Itália",
+        "descricao": "Camadas de leite vaporizado e café espresso, finalizado com espuma de leite.",
+        "ingredientes": ["Leite vaporizado", "Café espresso", "Espuma de leite"],
+        "valor": 20.00,
+        "imagem": "../source/cafenote.jpg"
+    },
+    {
+        "nome": "Mocha",
+        "origem": "EUA",
+        "descricao": "Combinação de café espresso, leite vaporizado e calda de chocolate.",
+        "ingredientes": ["Café espresso", "Leite vaporizado", "Calda de chocolate", "Chantilly"],
+        "valor": 22.00,
+        "imagem": "../source/cafenote.jpg"
+    },
+    {
+        "nome": "Affogato",
+        "origem": "Itália",
+        "descricao": "Sobremesa composta por uma bola de sorvete mergulhada em café espresso quente.",
+        "ingredientes": ["Sorvete de baunilha", "Café espresso"],
+        "valor": 24.00,
+        "imagem": "../source/cafenote.jpg"
+    },
+    {
+        "nome": "Tiramisu",
+        "origem": "Itália",
+        "descricao": "Clássica sobremesa italiana feita com camadas de biscoito embebido em café e creme mascarpone.",
+        "ingredientes": ["Café espresso", "Biscoito champanhe", "Creme mascarpone", "Cacau em pó"],
+        "valor": 28.00,
+        "imagem": "../source/cafenote.jpg"
+    },
+    {
+        "nome": "Croissant",
+        "origem": "França",
+        "descricao": "Pão folhado amanteigado, crocante por fora e macio por dentro.",
+        "ingredientes": ["Farinha de trigo", "Manteiga", "Fermento", "Açúcar"],
+        "valor": 12.00,
+        "imagem": "../source/cafenote.jpg"
+    },
+    {
+        "nome": "Pain au Chocolat",
+        "origem": "França",
+        "descricao": "Versão do croissant recheada com chocolate derretido.",
+        "ingredientes": ["Farinha de trigo", "Manteiga", "Chocolate meio amargo", "Fermento"],
+        "valor": 15.00,
+        "imagem": "../source/cafenote.jpg"
+    },
+    {
+        "nome": "Chai Latte",
+        "origem": "Índia",
+        "descricao": "Bebida quente feita com chá preto, leite vaporizado e especiarias.",
+        "ingredientes": ["Chá preto", "Leite vaporizado", "Canela", "Cravo", "Gengibre", "Cardamomo"],
+        "valor": 19.00,
+        "imagem": "../source/cafenote.jpg"
+    },
+    {
+        "nome": "Brownie",
+        "origem": "EUA",
+        "descricao": "Doce denso de chocolate, crocante por fora e macio por dentro.",
+        "ingredientes": ["Chocolate meio amargo", "Manteiga", "Açúcar", "Ovos", "Farinha de trigo"],
+        "valor": 14.00,
+        "imagem": "../source/cafenote.jpg"
+    },
+    {
+        "nome": "Cheesecake de Frutas Vermelhas",
+        "origem": "EUA",
+        "descricao": "Sobremesa cremosa de queijo com calda de frutas vermelhas.",
+        "ingredientes": ["Cream cheese", "Biscoito amanteigado", "Açúcar", "Ovos", "Frutas vermelhas"],
+        "valor": 26.00,
+        "imagem": "../source/cafenote.jpg"
+    }
+]

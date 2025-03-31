@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café DelRio</title>
+    <link rel="stylesheet" href="style/root.css">
+    <link rel="stylesheet" href="style/nav.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/gallery.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/reserva.css">
+    <link rel="stylesheet" href="style/review.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navMenu" class="backgroundToggle">
+        <div id="logo">Café DelRio</div>
+        <div id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="menu">
+            <button class="nav-btn" onclick="scrollToSection('header')">Home</button>
+            <button class="nav-btn" onclick="scrollToSection('galleryBox')">Services</button>
+            <button class="nav-btn" onclick="scrollToSection('asideContact')">Contact</button>
+        </div>
+    </nav>
+
+    <header id="header">
+        <video id="videoBox" autoplay muted loop>
+            <source src="source/Cinematic Coffee - Shot on Sony FX6.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Café DelRio</h1> 
+            <h2>Descubra Sabores Incríveis</h2> 
+            <button id="btn-change" href="#produtos" class="btn">Saiba Mais</button> 
+        </div>
+    </header>
+
+    <main>
+        <!-- Espaço entre Header e Main -->
+        <article>
+            <div class="separator"></div>
+        </article>
+
+
+        <article id="article-one">
+            <div id="article-one-container">
+                <div id="article-one-image-container">
+                    <img src="source/marcos.png" alt="Chef Antonio Bachour">
+                </div>
+                <section id="article-one-section-one">
+                    <h1>SOBRE NÓS</h1>
+                    <h2>O Barista Marcos Brandão</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam at, animi assumenda maxime ratione soluta incidunt sapiente aut repellendus voluptatum sit, rerum itaque, rem consequuntur quod dolore quidem accusamus nobis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati assumenda nesciunt blanditiis maxime laudantium. Impedit, magni placeat! Distinctio, laudantium in. Animi qui consequatur cupiditate impedit minima? Officiis, dolorum. Nostrum, doloribus.</p>
+                    <button>LER MAIS</button>
+                </section>
+            </div>
+        </article>
+
+        <section id="galleryBox">
+            <h1>SERVIÇOS</h1>
+            <div class="gallery">
+                <a href="pages/bistro.html#catalogo" class="area1">
+                    <img src="source/bistroAntigo.jpg" alt="Imagem 1">
+                    <span>Bistrô Antigo</span>
+                </a>
+                <a href="pagina2.html" class="area2">
+                    <img src="source/eventos.jpg" alt="Imagem 2">
+                    <span>Eventos</span>
+                </a>
+                <a href="pages/cafeteria.html#catalogo" class="area3">
+                    <img src="source/cafenote.jpg" alt="Imagem 3">
+                    <span>Café Noturno</span>
+                </a>
+                <a href="pages/azeite.html#catalogo" class="area5">
+                    <img src="source/azeite.avif" alt="Imagem 4">
+                    <span>Azeites Especiais</span>
+                </a>
+                <a href="pages/torrefacao.html#catalogo" class="area4">
+                    <img src="source/torrefacaoConcha.jpg" alt="Imagem 5">
+                    <span>Torrefação</span>
+                </a>
+                <a href="pages/vinho.html#catalogo" class="area6">
+                    <img src="source/vinho-tinto-1400px-01.avif" alt="Imagem 6">
+                    <span>Vinhos Tintos</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- <section id="reserva-section">
+            <div class="reserva-container">
+                <div class="reserva-formulario">
+                    <div class="reserva-info">
+                        <h1>Reserve sua Experiência</h1>
+                        <p>Momentos especiais merecem um ambiente acolhedor. Faça sua reserva e aproveite a experiência única do nosso bistrô.</p>
+                    </div>
+                    <div class="reserva-box">
+                        <form>
+                            <input type="text" value="Marcos" required>
+                            <input type="text" value="(21) 99999-9999" required>
+                            <label>
+                                <input type="date" value="2025-03-12" required>
+                            </label>
+                            <label>
+                                <input type="time" value="11:00" required>
+                            </label>
+                            <label>
+                                <select>
+                                    <option>1 person</option>
+                                    <option>2 people</option>
+                                    <option>3 people</option>
+                                    <option>4 people</option>
+                                    <option>4 people</option>
+                                    <option>5 people</option>
+                                    <option>6 people</option>
+                                    <option>7 people</option>
+                                    <option>8 people</option>
+                                    <option>9 people</option>
+                                    <option>10 people</option>
+                                    <option>11 people</option>
+                                </select>
+                            </label>
+                            <button type="submit">Find a Table</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="reserva-image">
+                    <img src="source/cafeComGraos.jpg" alt="Couple enjoying dinner">
+                </div>
+            </div>
+        </section> -->
+
+        <section class="reviews">
+            <div>
+                <h2 class="title">REVIEWS</h2>
+            </div>
+            <div>
+                <p class="review-source"></p>
+                <p class="review-author"></p>
+                <blockquote></blockquote>
+            </div>
+            <div>
+                <div class="pagination"></div>
+                <div class="controls">
+                    <button class="prev">&#9664;</button>
+                    <button class="next">&#9654;</button>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Empório Café & Bistrô. Todos os direitos reservados.</p>
+    </footer>
+
+    <div id="floating-button">
+        <a href="https://wa.me/+41763950008" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> <span class="button-text">Talk with us!</span>
+        </a>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/scriptNav.js"></script>
+</body>
+</html>

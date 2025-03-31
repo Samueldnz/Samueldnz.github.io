@@ -1,0 +1,101 @@
+.reviews {
+    text-align: center;
+    padding: 50px;
+    background: #f5f5f5; /* Fundo atualizado */
+    position: relative;
+    color: #333; /* Texto escuro para contraste */
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviews > div {
+    width: 100%;
+    max-width: 800px;
+}
+
+.title {
+    font-size: 2em;
+    letter-spacing: 1.5px;
+    color: #8a6d3b; /* Tom amadeirado para combinar */
+    margin-bottom: 10px;
+}
+
+.review-source {
+    font-weight: bold;
+    color: #555;
+}
+
+.review-author {
+    font-size: 1.2em;
+    color: #444;
+}
+
+.stars {
+    color: #d4af37; /* Dourado para contraste */
+}
+
+blockquote {
+    font-size: 1.2em;
+    margin: 10px auto;
+    max-width: 800px;
+    line-height: 1.5;
+    height: 100px;
+    color: #222; /* Melhor contraste */
+}
+
+.pagination {
+    margin: 10px 0;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb; /* Cinza claro para suavizar */
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.active {
+    background-color: #8a6d3b; /* Marrom amadeirado */
+}
+
+.controls {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.prev, .next {
+    background: none;
+    border: none;
+    color: #8a6d3b; /* Marrom para contraste */
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .reviews {
+        height: 450px;
+        padding: 30px;
+    }
+
+    .reviews > div {
+        width: 90%;
+        max-width: none;
+    }
+
+    blockquote {
+        height: auto;
+        overflow: visible;
+    }
+
+    .controls {
+        gap: 5px;
+    }
+}

@@ -1,0 +1,60 @@
+footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+}
+
+/* Botão flutuante */
+#floating-button {
+    position: fixed;
+    z-index: 999;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+#floating-button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1.5px;
+}
+
+#floating-button i {
+    margin-right: 8px;
+    font-size: 22px;
+}
+
+.button-text{
+    font-size: 16px;
+}
+
+/* Responsividade: Oculta o texto em telas menores */
+@media (max-width: 768px) {
+    #floating-button {
+        padding: 10px; /* Ajusta o padding para manter o botão circular */
+        border-radius: 50%; /* Torna o botão completamente redondo */
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+    }
+
+    #floating-button i {
+        margin-right: 0; /* Remove o espaçamento entre o ícone e o texto */
+    }
+
+    #floating-button .button-text {
+        display: none; /* Oculta o texto "Fale conosco" */
+    }
+}

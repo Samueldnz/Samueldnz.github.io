@@ -1,0 +1,82 @@
+[
+    {
+        "nome": "Cabernet Sauvignon",
+        "origem": "França",
+        "ano": 2018,
+        "descricao": "Vinho com notas amadeiradas, envelhecido em barril de carvalho por 100 anos.",
+        "valor": 120.50,
+        "imagem": "../source/vinho-tinto-1400px-01.avif"
+    },
+    {
+        "nome": "Malbec",
+        "origem": "Argentina",
+        "ano": 2020,
+        "descricao": "Vinho encorpado, com notas frutadas e final persistente.",
+        "valor": 90.00,
+        "imagem": "../source/vinho-tinto-1400px-01.avif"
+    },
+    {
+        "nome": "Merlot",
+        "origem": "Chile",
+        "ano": 2019,
+        "descricao": "Vinho suave, com aroma de frutas vermelhas e leve toque de baunilha.",
+        "valor": 75.30,
+        "imagem": "../source/vinho-tinto-1400px-01.avif"
+    },
+    {
+        "nome": "Pinot Noir",
+        "origem": "EUA",
+        "ano": 2021,
+        "descricao": "Vinho elegante, de corpo médio e notas de morango e cereja.",
+        "valor": 110.00,
+        "imagem": "../source/vinho-tinto-1400px-01.avif"
+    },
+    {
+        "nome": "Syrah",
+        "origem": "Austrália",
+        "ano": 2017,
+        "descricao": "Vinho intenso, com notas de pimenta preta e frutas escuras.",
+        "valor": 130.75,
+        "imagem": "../source/vinho-tinto-1400px-01.avif"
+    },
+    {
+        "nome": "Chardonnay",
+        "origem": "Itália",
+        "ano": 2022,
+        "descricao": "Vinho branco seco, com notas cítricas e toque amanteigado.",
+        "valor": 85.00,
+        "imagem": "../source/vinho-tinto-1400px-01.avif"
+    },
+    {
+        "nome": "Sauvignon Blanc",
+        "origem": "Nova Zelândia",
+        "ano": 2021,
+        "descricao": "Vinho refrescante, com notas herbáceas e aroma tropical.",
+        "valor": 95.20,
+        "imagem": "../source/vinho-tinto-1400px-01.avif"
+    },
+    {
+        "nome": "Tempranillo",
+        "origem": "Espanha",
+        "ano": 2016,
+        "descricao": "Vinho encorpado, com notas de baunilha e frutas negras.",
+        "valor": 140.90,
+        "imagem": "../source/vinho-tinto-1400px-01.avif"
+    },
+    {
+        "nome": "Zinfandel",
+        "origem": "Califórnia",
+        "ano": 2019,
+        "descricao": "Vinho frutado, com notas de framboesa e pimenta.",
+        "valor": 100.00,
+        "imagem": "../source/vinho-tinto-1400px-01.avif"
+    },
+    {
+        "nome": "Carmenère",
+        "origem": "Chile",
+        "ano": 2020,
+        "descricao": "Vinho macio, com notas de pimentão vermelho e chocolate.",
+        "valor": 92.50,
+        "imagem": "../source/vinho-tinto-1400px-01.avif"
+    }
+]

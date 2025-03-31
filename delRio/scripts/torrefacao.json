@@ -1,0 +1,92 @@
+[
+    {
+        "nome": "Café Bourbon Amarelo",
+        "origem": "Brasil",
+        "ano": 2023,
+        "descricao": "Café de corpo médio, com notas de caramelo e frutas amarelas.",
+        "peso": "250g",
+        "valor": 45.00,
+        "imagem": "../source/torrefacaoConcha.jpg"
+    },
+    {
+        "nome": "Café Geisha",
+        "origem": "Panamá",
+        "ano": 2023,
+        "descricao": "Café floral e frutado, com notas de jasmim e bergamota.",
+        "peso": "200g",
+        "valor": 180.00,
+        "imagem": "../source/torrefacaoConcha.jpg"
+    },
+    {
+        "nome": "Café Catuaí Vermelho",
+        "origem": "Brasil",
+        "ano": 2022,
+        "descricao": "Café encorpado, com notas de chocolate amargo e castanhas.",
+        "peso": "500g",
+        "valor": 65.00,
+        "imagem": "../source/torrefacaoConcha.jpg"
+    },
+    {
+        "nome": "Café Sidamo",
+        "origem": "Etiópia",
+        "ano": 2023,
+        "descricao": "Café de acidez brilhante, com notas cítricas e toque floral.",
+        "peso": "250g",
+        "valor": 55.00,
+        "imagem": "../source/torrefacaoConcha.jpg"
+    },
+    {
+        "nome": "Café Blue Mountain",
+        "origem": "Jamaica",
+        "ano": 2022,
+        "descricao": "Café equilibrado, de baixa acidez e notas de nozes e chocolate.",
+        "peso": "500g",
+        "valor": 220.00,
+        "imagem": "../source/torrefacaoConcha.jpg"
+    },
+    {
+        "nome": "Café Kona",
+        "origem": "Havaí",
+        "ano": 2023,
+        "descricao": "Café suave, com notas de mel e frutas tropicais.",
+        "peso": "250g",
+        "valor": 150.00,
+        "imagem": "../source/torrefacaoConcha.jpg"
+    },
+    {
+        "nome": "Café Arábica Orgânico",
+        "origem": "Colômbia",
+        "ano": 2022,
+        "descricao": "Café 100% arábica, cultivado organicamente, com notas de baunilha e chocolate.",
+        "peso": "1kg",
+        "valor": 98.00,
+        "imagem": "../source/torrefacaoConcha.jpg"
+    },
+    {
+        "nome": "Café Robusta Intenso",
+        "origem": "Vietnã",
+        "ano": 2023,
+        "descricao": "Café de alta cafeína, sabor intenso e notas terrosas.",
+        "peso": "500g",
+        "valor": 40.00,
+        "imagem": "../source/torrefacaoConcha.jpg"
+    },
+    {
+        "nome": "Café Maragogipe",
+        "origem": "Brasil",
+        "ano": 2022,
+        "descricao": "Café raro, com grãos grandes, corpo sedoso e notas florais.",
+        "peso": "250g",
+        "valor": 75.00,
+        "imagem": "../source/torrefacaoConcha.jpg"
+    },
+    {
+        "nome": "Café Yirgacheffe",
+        "origem": "Etiópia",
+        "ano": 2023,
+        "descricao": "Café delicado, com notas de frutas vermelhas e toque floral.",
+        "peso": "250g",
+        "valor": 60.00,
+        "imagem": "../source/torrefacaoConcha.jpg"
+    }
+]

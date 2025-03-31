@@ -1,0 +1,82 @@
+[
+    {
+        "nome": "Ratatouille",
+        "origem": "França",
+        "descricao": "Prato clássico provençal, feito com legumes cozidos lentamente em molho de tomate.",
+        "ingredientes": ["Abobrinha", "Berinjela", "Tomate", "Pimentão", "Cebola", "Alho", "Azeite de oliva"],
+        "valor": 58.00,
+        "imagem": "../source/bistroAntigo.jpg"
+    },
+    {
+        "nome": "Coq au Vin",
+        "origem": "França",
+        "descricao": "Frango cozido lentamente em vinho tinto, com cogumelos, cebola e bacon.",
+        "ingredientes": ["Frango", "Vinho tinto", "Cogumelos", "Cebola", "Bacon", "Alho", "Tomilho"],
+        "valor": 95.00,
+        "imagem": "../source/bistroAntigo.jpg"
+    },
+    {
+        "nome": "Bouillabaisse",
+        "origem": "França",
+        "descricao": "Ensopado de frutos do mar com ervas aromáticas e açafrão.",
+        "ingredientes": ["Peixe branco", "Camarão", "Mexilhão", "Tomate", "Açafrão", "Alho", "Funcho"],
+        "valor": 120.00,
+        "imagem": "../source/bistroAntigo.jpg"
+    },
+    {
+        "nome": "Steak au Poivre",
+        "origem": "França",
+        "descricao": "Filé mignon grelhado com crosta de pimenta e molho cremoso.",
+        "ingredientes": ["Filé mignon", "Pimenta-do-reino", "Creme de leite", "Conhaque", "Manteiga"],
+        "valor": 110.00,
+        "imagem": "../source/bistroAntigo.jpg"
+    },
+    {
+        "nome": "Quiche Lorraine",
+        "origem": "França",
+        "descricao": "Torta salgada recheada com creme de ovos, bacon e queijo.",
+        "ingredientes": ["Massa folhada", "Ovos", "Creme de leite", "Bacon", "Queijo Gruyère"],
+        "valor": 55.00,
+        "imagem": "../source/bistroAntigo.jpg"
+    },
+    {
+        "nome": "Cassoulet",
+        "origem": "França",
+        "descricao": "Ensopado rústico de feijão branco com linguiça e pato confitado.",
+        "ingredientes": ["Feijão branco", "Linguiça", "Pato confitado", "Tomate", "Alho", "Tomilho"],
+        "valor": 85.00,
+        "imagem": "../source/bistroAntigo.jpg"
+    },
+    {
+        "nome": "Tartare de Salmão",
+        "origem": "França",
+        "descricao": "Salmão cru temperado com mostarda, alcaparras e ervas frescas.",
+        "ingredientes": ["Salmão fresco", "Mostarda Dijon", "Alcaparras", "Cebola roxa", "Cebolinha", "Limão"],
+        "valor": 75.00,
+        "imagem": "../source/bistroAntigo.jpg"
+    },
+    {
+        "nome": "Confit de Canard",
+        "origem": "França",
+        "descricao": "Coxa de pato cozida lentamente em sua própria gordura, servida com batatas douradas.",
+        "ingredientes": ["Coxa de pato", "Gordura de pato", "Batata", "Tomilho", "Alho"],
+        "valor": 125.00,
+        "imagem": "../source/bistroAntigo.jpg"
+    },
+    {
+        "nome": "Crème Brûlée",
+        "origem": "França",
+        "descricao": "Sobremesa clássica com creme de baunilha e crosta de açúcar caramelizado.",
+        "ingredientes": ["Creme de leite", "Baunilha", "Gemas de ovo", "Açúcar"],
+        "valor": 45.00,
+        "imagem": "../source/bistroAntigo.jpg"
+    },
+    {
+        "nome": "Profiteroles",
+        "origem": "França",
+        "descricao": "Massa choux recheada com sorvete e coberta com calda de chocolate.",
+        "ingredientes": ["Massa choux", "Sorvete de baunilha", "Chocolate meio amargo"],
+        "valor": 50.00,
+        "imagem": "../source/bistroAntigo.jpg"
+    }
+]

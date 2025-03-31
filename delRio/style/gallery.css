@@ -1,0 +1,102 @@
+#galleryBox{
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+}
+
+#galleryBox h1{
+    font-size: 40px;
+    letter-spacing: 1.2px;
+    color: #8a6d3b;
+    margin-bottom: 20px;
+}
+
+.area1{
+    grid-area: area1;
+}
+
+.area2{
+    grid-area: area2;
+}
+
+.area3{
+    grid-area: area3;
+}
+
+.area4{
+    grid-area: area4;
+}
+
+.area5{
+    grid-area: area5;
+}
+
+.area6{
+    grid-area: area6;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 300px 250px 250px 250px 300px; /* Define as alturas desejadas */
+    grid-template-areas: 
+        "area1 area2"
+        "area1 area4"
+        "area3 area4"
+        "area3 area6"
+        "area5 area6";
+    gap: 10px;
+    max-width: 1200px;
+    border-radius: 10px;
+}
+
+.gallery a {
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery a::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.gallery a:hover {
+    transform: scale(1.02);
+}
+
+.gallery a span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: "League Spartan", sans-serif;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}

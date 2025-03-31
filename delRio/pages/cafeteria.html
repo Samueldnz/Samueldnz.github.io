@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café DelRio</title>
+    <link rel="stylesheet" href="../style/root.css">
+    <link rel="stylesheet" href="../style/nav.css">
+    <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/footer.css">
+    <link rel="stylesheet" href="../style/pages/catalogo.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navMenu" class="backgroundToggle">
+        <div id="logo">Café DelRio</div>
+        <div id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="menu">
+            <button class="nav-btn" onclick="window.location.href='../index.html#article-one'">Home</button>
+            <button class="nav-btn" onclick="window.location.href='../index.html#galleryBox'">Services</button>
+            <button class="nav-btn" onclick="scrollToSection('asideContact')">Contact</button>
+        </div>
+    </nav>
+
+    <header id="header">
+        <video id="videoBox" autoplay muted loop>
+            <source src="../source/Cinematic Coffee - Shot on Sony FX6.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Café DelRio</h1> 
+            <h2>Descubra Sabores Incríveis</h2> 
+            <button id="btn-change" href="#produtos" class="btn">Saiba Mais</button> 
+        </div>
+    </header>
+
+    <main>
+        <div class="description">
+            <div class="titleBox"><h1>Menu da Cafeteria</h1></div>
+            <p class="textBox" style="margin-bottom: 10px;">Um bom café tem o poder de transformar momentos. Seja pela energia que desperta, pelo aroma irresistível que envolve o ambiente ou pelo simples prazer de uma pausa bem aproveitada, o café é mais do que uma bebida – é uma experiência que aquece a alma e aproxima pessoas.</p> <p class="textBox"><strong>Agora, imagine um lugar onde cada xícara é preparada com paixão e qualidade.</strong> Um ambiente acolhedor, perfeito para começar o dia com um espresso encorpado, compartilhar conversas descontraídas ou simplesmente se presentear com um momento de tranquilidade. Venha conhecer nossa cafeteria e descubra sabores que vão além do comum. Estamos te esperando para um café especial! ☕✨</p>
+        </div>
+        <div>
+            <div class="container" id="catalogo"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Empório Café & Bistrô. Todos os direitos reservados.</p>
+    </footer>
+
+    <div id="floating-button">
+        <a href="https://wa.me/+41763950008" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> <span class="button-text">Talk with us!</span>
+        </a>
+    </div>
+
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/scriptNav.js"></script>
+    <script src="../scripts/cafeteria.js"></script>
+</body>
+</html>

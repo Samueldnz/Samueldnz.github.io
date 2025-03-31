@@ -1,0 +1,146 @@
+/* Espaço entre o Header e o Main - Gradiente Suavizado */
+.separator {
+    height: 2px;
+    background-color: #fdf7e9;
+    width: 100%;
+}
+
+/* Seção "Sobre Nós" */
+#article-one {
+    /* background-image: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url("../source/torrefacao.jpg"); */
+    background-color: #f5f5f5; /*express-brown*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 10%;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* Container Principal */
+#article-one-container {
+    background-color: #f5f5f5;
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Imagem do Chef */
+#article-one-image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    overflow: hidden;
+}
+
+#article-one-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Texto */
+#article-one-section-one {
+    width: 50%;
+    padding: 20px 40px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
+}
+
+#article-one-section-one h1 {
+    font-size: 44px;
+    color: #8a6d3b;
+    letter-spacing: 1.5px;
+    font-weight: 300;
+}
+
+#article-one-section-one h2 {
+    color: black;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+#article-one-section-one p {
+    font-family: "League Spartan", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: black;
+}
+
+/* Botão */
+#article-one-section-one button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#article-one-section-one button:hover {
+    background-color: #e0c08d;
+    color: black;
+}
+
+
+/* ============================= */
+/* RESPONSIVIDADE PARA MOBILE */
+/* ============================= */
+@media (max-width: 768px) {
+    #article-one-container {
+        flex-direction: column; /* Muda para coluna */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    #article-one-image-container {
+        width: 100%; /* Imagem ocupa toda a largura */
+    }
+
+    #article-one-image-container img {
+        width: 100%;
+        height: 300px; /* Altura fixa para cortar a imagem */
+        object-fit: cover; /* Garante que a imagem ocupe toda a área sem distorcer */
+        border-radius: 0; /* Remove bordas arredondadas para tela cheia */
+    }
+
+    #article-one-section-one {
+        width: 100%;
+        padding: 20px;
+    }
+
+    #article-one-section-one h1 {
+        font-size: 26px;
+    }
+
+    #article-one-section-one h2 {
+        font-size: 24px;
+    }
+
+    #article-one-section-one p {
+        font-size: 16px;
+    }
+
+    #article-one-section-one button {
+        display: block;
+        margin: 20px auto; /* Centraliza botão */
+    }
+}
+
+
+

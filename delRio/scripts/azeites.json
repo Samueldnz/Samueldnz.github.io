@@ -1,0 +1,82 @@
+[
+    {
+        "nome": "Barbera",
+        "origem": "Itália",
+        "ano": 2018,
+        "descricao": "Vinho vibrante, com alta acidez e notas de cereja e ameixa.",
+        "valor": 105.40,
+        "imagem": "../source/azeite.avif"
+    },
+    {
+        "nome": "Grenache",
+        "origem": "Espanha",
+        "ano": 2019,
+        "descricao": "Vinho suave, com notas de morango e especiarias.",
+        "valor": 98.90,
+         "imagem": "../source/azeite.avif"
+    },
+    {
+        "nome": "Nebbiolo",
+        "origem": "Itália",
+        "ano": 2017,
+        "descricao": "Vinho encorpado, com taninos firmes e notas de alcaçuz e rosas.",
+        "valor": 150.00,
+         "imagem": "../source/azeite.avif"
+    },
+    {
+        "nome": "Verdejo",
+        "origem": "Espanha",
+        "ano": 2021,
+        "descricao": "Vinho branco seco, com aromas cítricos e herbáceos.",
+        "valor": 87.30,
+         "imagem": "../source/azeite.avif"
+    },
+    {
+        "nome": "Viognier",
+        "origem": "França",
+        "ano": 2020,
+        "descricao": "Vinho branco aromático, com notas florais e toque de damasco.",
+        "valor": 120.70,
+         "imagem": "../source/azeite.avif"
+    },
+    {
+        "nome": "Petite Sirah",
+        "origem": "EUA",
+        "ano": 2018,
+        "descricao": "Vinho encorpado, com notas de frutas escuras e especiarias.",
+        "valor": 135.50,
+         "imagem": "../source/azeite.avif"
+    },
+    {
+        "nome": "Riesling",
+        "origem": "Alemanha",
+        "ano": 2022,
+        "descricao": "Vinho branco levemente adocicado, com acidez equilibrada e notas de maçã verde.",
+        "valor": 80.00,
+         "imagem": "../source/azeite.avif"
+    },
+    {
+        "nome": "Gamay",
+        "origem": "França",
+        "ano": 2021,
+        "descricao": "Vinho leve e frutado, com notas de framboesa e violeta.",
+        "valor": 95.60,
+         "imagem": "../source/azeite.avif"
+    },
+    {
+        "nome": "Touriga Nacional",
+        "origem": "Portugal",
+        "ano": 2016,
+        "descricao": "Vinho intenso, com notas de cassis, violetas e especiarias.",
+        "valor": 145.80,
+         "imagem": "../source/azeite.avif"
+    },
+    {
+        "nome": "Moscato",
+        "origem": "Itália",
+        "ano": 2023,
+        "descricao": "Vinho branco doce e aromático, com notas de pêssego e flor de laranjeira.",
+        "valor": 75.00,
+         "imagem": "../source/azeite.avif"
+    }
+]
