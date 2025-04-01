@@ -1,10 +1,12 @@
-.container {
+.containerEventos {
     max-width: 1200px;
     margin: 40px auto;
+    margin-top: 0;
     padding: 20px;
     text-align: center;
 }
-.service {
+
+.serviceEventos {
     background: white;
     padding: 30px;
     margin: 20px 0;
@@ -13,23 +15,59 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: row;
 }
-.service img {
-    width: 200px;
-    height: 150px;
-    border-radius: 10px;
-    object-fit: cover;
-    margin-left: 20px;
-}
+
 .service-content {
     flex: 1;
     text-align: left;
 }
-.service h2 {
+
+.serviceEventos h2 {
     color: #8b5a2b;
     margin-bottom: 10px;
 }
-.service p {
+
+.serviceEventos p {
     font-size: 1.1rem;
     line-height: 1.6;
+}
+
+.imageBoxEventos{
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviceEventos img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-left: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .serviceEventos {
+        flex-direction: column-reverse; /* Inverte a ordem: img acima do texto */
+        text-align: center;
+        padding: 0;
+    }
+
+    .imageBoxEventos{
+        width: 100%;
+    }
+
+    .serviceEventos img {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    .service-content {
+        text-align: center;
+        padding: 10px 30px 30px 30px;
+    }
 }
