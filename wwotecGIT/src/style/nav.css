@@ -1,0 +1,117 @@
+nav {
+    position:sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#logo{
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    gap: 20px; /* Espaço entre a logo e o texto */
+}
+
+#logo img {
+    height: 50px; /* Ajuste conforme necessário */
+    width: auto;
+    cursor: pointer; /* Indica que é clicável */
+}
+
+#logo a {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+#company-name {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    white-space: nowrap; /* Evita quebra de linha */
+    letter-spacing: 1.5px;
+}
+
+#hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+#hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/*Small screen Menu*/
+@media (max-width: 768px) {
+    #menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(10, 10, 10, 0.95);
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        border-radius: 0 0 5px 5px;
+      
+    }
+
+    #menu.active {
+        display: flex; /* show the menu when actived*/
+    }
+
+    .navItem{
+        text-align: center;
+    }
+
+
+    #hamburger-menu {
+        display: flex;
+    }
+}

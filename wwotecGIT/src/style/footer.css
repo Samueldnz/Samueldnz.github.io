@@ -1,0 +1,126 @@
+#footer {
+    background: var(--primary-blue); 
+    color: white; 
+    text-align: center;
+    padding: 2rem 1rem; 
+    margin-top: 3rem;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+#addressContainer {
+    display: flex; /* Alinha as divs lado a lado */
+    gap: 20px; /* Espaçamento entre os itens */
+    justify-content: space-between; /* Espaço uniforme entre os elementos */
+    flex-wrap: wrap; /* Permite que as divs se reorganizem em telas menores */
+}
+
+.address {
+    flex: 1 1 calc(50% - 20px); /* Ocupa 50% da largura com margem */
+    box-sizing: border-box; /* Garante que o padding não exceda o tamanho do elemento */
+}
+
+.address a {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    color: inherit; /* Mantém a cor padrão do texto */
+}
+
+.address a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    font-weight: bold; /* Deixa o texto em negrito para destacar */
+    color: var(--accent);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .address {
+        flex: 1 1 100%; /* Ocupa 100% da largura da tela */
+        text-align: center; /* Centraliza o texto */
+    }
+}
+
+#links{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.address p,
+#legal p {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+}
+
+#links a {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    color: inherit; /* Mantém a cor padrão do texto */
+    display: inline-block;
+    margin: 0 10px;
+    letter-spacing: 1.5px;
+}
+
+#links a:hover {
+    text-decoration: underline;
+    font-weight: bold; /* Deixa o texto em negrito para destacar */
+    color: var(--accent);
+}
+
+#legal p {
+    font-size: 12px;
+}
+
+/* Botão flutuante */
+#floating-button {
+    position: fixed;
+    z-index: 999;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+#floating-button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1.5px;
+}
+
+#floating-button i {
+    margin-right: 8px;
+    font-size: 22px;
+}
+
+.button-text{
+    font-size: 16px;
+}
+
+/* Responsividade: Oculta o texto em telas menores */
+@media (max-width: 768px) {
+    #floating-button {
+        padding: 10px; /* Ajusta o padding para manter o botão circular */
+        border-radius: 50%; /* Torna o botão completamente redondo */
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+    }
+
+    #floating-button i {
+        margin-right: 0; /* Remove o espaçamento entre o ícone e o texto */
+    }
+
+    #floating-button .button-text {
+        display: none; /* Oculta o texto "Fale conosco" */
+    }
+}

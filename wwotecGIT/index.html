@@ -1,204 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>WWOTEC Outsourcing</title>
-        <link rel="stylesheet" href="src/style/styleNav.css">
-        <link rel="stylesheet" href="src/style/styleMain.css">
-        <link rel="stylesheet" href="src/style/styleAside.css"> 
-        <link rel="stylesheet" href="src/style/styleFooter.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-        <link rel="shortcut icon" href="src/midia/logo.ico" type="image/x-icon">
-    </head>
-    <body>
-
-        <!-- Navbar -->
-        <nav id="navMenu" class="backgroundToggle">
-            <div id="logo">
-                <a href="index.html">
-                    <img src="src/midia/logo.png" alt="WWOTEC Logo">
-                    <span id="company-name">WWOTEC</span>
-                </a>
-                
-            </div>
-            <div id="hamburger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-            </div>
-            <div id="menu">
-                <button class="nav-btn firstColor secondColor" onclick="scrollToSection('header')">Home</button>
-                <button class="nav-btn firstColor secondColor" onclick="scrollToSection('sectionAbout')">About</button>
-                <button class="nav-btn firstColor secondColor" onclick="scrollToSection('sectionServices')">Services</button>
-                <button class="nav-btn firstColor secondColor" onclick="scrollToSection('asideContact')">Contact</button>
-            </div>
-        </nav>
-            
-
-        <!-- Header -->
-        <header id="header">
-            <video id="videoHeader" autoplay muted loop>
-                <source src="src/midia/videoHeader.mp4" type="video/mp4">
-                Your browser does not support the video format.
-            </video>
-            <div class="overlay"></div>
-            <div id="headerContent">
-                <h1>WWOTEC</h1>
-                <h2>Outsourcing Knowledge, Technology and Innovation!</h2>
-                <button id="headerBtn" onclick="scrollToSection('sectionServices')">Learn More</button>
-            </div>
-        </header>
-
-        <!-- Main -->
-        <main>
-            <!-- Services -->
-            <section id="sectionServices">
-                <div id="servicesContainer">
-                    <div id="serviceTitle">
-                        <h2 class="titleToggle">MAIN SERVICES</h2>
-                    </div>                
-                    <div id="servicesCardBox">
-                        <div class="serviceCard">
-                            <div class="icon">C</div>
-                            <h3>IT Solutions</h3>
-                            <p>We offer expert IT services, including website and application development, database management, and tailored digital solutions. High-performance systems to meet your needs, from concept to deployment.</p>
-                        </div>
-                        <div class="serviceCard">
-                            <div class="icon">C</div>
-                            <h3>End-to-End Project</h3>
-                            <p>From concept to execution, we design, optimize, and refine projects, transforming ideas into functional models and full-scale plants in industrial design, architecture, and engineering.</p>
-                        </div>
-                        <div class="serviceCard">
-                            <div class="icon">C</div>
-                            <h3>Expert Consultancy</h3>
-                            <p>Our experts work closely with you, offering insights and support through seamless digital collaboration. Elevate your business with expert guidance, anytime, anywhere.</p>
-                        </div>
-                        <div class="serviceCard">
-                            <div class="icon">C</div>
-                            <h3>Digital Billing</h3>
-                            <p>Through a proprietary system that is 100% adaptable to each need, we build the Collection Strategy and facilitate mass communication between companies and their customers via multiple channels.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- About Us -->
-            <section id="sectionAbout" class="backgroundToggle">
-                <div id="aboutContainer">
-                    <div id="aboutText">
-                        <div id="aboutTitle">
-                            <h2>ABOUT US</h2>
-                        </div>
-                        <p>
-                            At WWOTEC, we specialize in delivering top-tier outsourcing solutions that drive efficiency, innovation, and growth. With a team of highly skilled professionals, we provide tailored services across industrial design, architecture, engineering - mechanic, civil, chemical - customer support and IT development, helping businesses optimize operations and reduce costs.
-                        </p>
-                    </div>
-                    <div id="aboutCardBox">
-                        <div id="mission" class="aboutCard">
-                            <img src="src/midia/missao.jpg" alt="Missão">
-                            <h3 class="titleAbout">MISSION</h3>
-                            <p>We are committed to delivering high-quality, cost-effective outsourcing solutions that optimize business operations. Through technology, expertise, and a customer-centric approach we help organizations enhance productivity and focus on their core strengths.</p>
-                        </div>
-                        <div id="vision" class="aboutCard">
-                            <img src="src/midia/visao.jpg" alt="Visão">
-                            <h3 class="titleAbout">VISION</h3>
-                            <p>To be a globally recognized leader in outsourcing solutions, empowering businesses of all sizes with innovative, efficient, and scalable services that not only drive sustainable growth but also foster long-term success.</p>
-                        </div>
-                        <div id="values" class="aboutCard">
-                            <img src="src/midia/valores.jpg" alt="Valores">
-                            <h3 class="titleAbout">VALUES</h3>
-                            <p>We are committed to excellence, constantly striving for the highest standards in service and innovation. Integrity is at the core of our business with a strong customer focus, we embrace innovation, leveraging cutting-edge technologies and continuous improvement to stay ahead.</p>
-                        </div>
-                        <div id="purpose" class="aboutCard">
-                            <img src="src/midia/proposito.jpeg" alt="Propósito">
-                            <h3 class="titleAbout">PURPOSE</h3>
-                            <p>Our purpose is to empower businesses to unlock their full potential by providing innovative outsourcing solutions. We strive to create lasting value for our clients, employees, and communities by fostering growth, sustainability, and success at every level of the business ecosystem.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        
-
-        <aside id="asideContact">
-            <img src="src/midia/WWOTEC.png" alt="contatsBackground">
-            <div class="overlay"></div>
-            <div id="form-container">
-                <h1>Request a contact</h1>
-                <form id="contactForm">
-                    <div class="input-group">
-                        <label for="nome">Full Name <span>*</span></label>
-                        <input type="text" id="nome" name="nome" placeholder="For example: John" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="email">Email <span>*</span></label>
-                        <input type="email" id="email" name="email" placeholder="For example: youremail@example.com" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="company">Company</label>
-                        <input type="text" id="company" name="company" placeholder="Enter your company name">
-                    </div>
-                    <div class="input-group">
-                        <label for="phonenumber">Phone Number <span>*</span></label>
-                        <input type="tel" id="phonenumber" name="phonenumber" placeholder="For example: +551134567890" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="message">Your Demand <span>*</span></label>
-                        <input type="text" id="message" name="message" placeholder="For example: I Need a website from zero" required>
-                    </div>            
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="conditions" name="conditions" required>
-                        <label for="conditions">I agree with the <a href="#">Data Conditions</a></label>
-                    </div>
-                    <div id="submit-group">
-                        <input id="submit-btn" type="submit" class="submit" name="submit" value="Submit">
-                    </div>           
-                </form>
-            </div>
-        </aside>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <!--<div class="social-icons">
-            <i class="fa-brands fa-whatsapp"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-linkedin"></i>
-            <i class="fa-brands fa-youtube"></i>
-            </div>-->
-        
-            <div id="addressContainer">
-                <div class="address">
-                    <p style="font-weight: bold;">BRAZIL</p>
-                    <p> Commercial - Nicolar Mermier | <a href="https://wa.me/+5521997421540" target="_blank">+55 21 99742-1540</a></p>
-                    <p> Administrative - Marcos Brandão | <a href="https://wa.me/+5521972739181" target="_blank">+55 21 97273-9181</a></p>
-                    <p> Technical - Samuel Sampaio | <a href="https://wa.me/+5521951111863" target="_blank">+55 21 95111-1863</a></p>
-                </div>
-                <div class="address">
-                    <P style="font-weight: bold;">SWITZERLAND</P>
-                    <p>CEO - Andreas Nicolaysen | <a href="https://wa.me/+41763950008" target="_blank">+41 76 395 00 08</a></p>
-                </div>
-            </div>
-            
-            <div id="links">
-                <a href="https://wa.me/+5521951111863?text=Hello%20Samuel,%20I'm%20interested%20in%20working%20at%20WWOTEC!." target="_blank">Work with us!</a>
-                <a href="privacypolicy.pdf" target="_blank">Privacy Policy</a>
-            </div>
-            
-            <!--<div id="legal">
-                <p>4C Digital - Collection and Registration Information Services LTD</p>
-                <p>FOURC COLLECTION AND REGISTRATION INFORMATION SERVICES LTD. CNPJ: 40.060.386/0001-60</p>
-                <p>All rights reserved.</p>
-            </div>-->
-            
-        </footer>
-        
-        <div id="floating-button">
-            <a href="https://wa.me/+41763950008" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i> <span class="button-text">Talk with us!</span>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WWOTEC Outsourcing</title>
+    <link rel="shortcut icon" href="src/midia/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/style/root.css">
+    <link rel="stylesheet" href="src/style/nav.css">
+    <link rel="stylesheet" href="src/style/header.css">
+    <link rel="stylesheet" href="src/style/service-list.css">
+    <link rel="stylesheet" href="src/style/service-card.css">
+    <link rel="stylesheet" href="src/style/banner.css">
+    <link rel="stylesheet" href="src/style/main.css">
+    <link rel="stylesheet" href="src/style/forms.css">
+    <link rel="stylesheet" href="src/style/footer.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navMenu" class="backgroundToggle">
+        <div id="logo">
+            <a href="index.html">
+                <img src="src/midia/logo.png" alt="WWOTEC Logo">
+                <span id="company-name">WWOTEC</span>
             </a>
         </div>
-        
-        <script src="src/js/script.js"></script>
-    </body>
+        <div id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="menu">
+            <li class="navItem"><a href="#header">Home</a></li>
+            <li class="navItem"><a href="src/pages/aboutUs.html">About Us</a></li>
+            <li class="navItem"><a href="#section-services">Services</a></li>
+            <li class="navItem"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="header">
+        <video id="videoHeader" autoplay muted loop>
+            <source src="src/midia/videoHeader.mp4" type="video/mp4">
+            Your browser does not support the video format.
+        </video>
+        <div class="overlay"></div>
+        <div id="headerContent">
+            <h1 id="wwotec">WWOTEC</h1>
+            <h2>Outsource efficiently. Boost results.</h2>
+            <p id="display">Tailor-made services for companies aiming higher.</p>
+            <a href="#contact" class="cta-button">Let's Connect</a>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="section-services">
+            <h2>Services</h2>
+            <div class="section-product">
+                <div>
+                  <ul class="service-list" id="serviceList"></ul>
+                </div>
+                <div id="service-cardbox" class="cardBox" data-limit="2"></div>
+                <div class="all-services">
+                    <button id="buttonAllservices" class="service-link" onclick="myfunction()">
+                        <div class="service-banner">
+                        <div class="overlay-banner">
+                            <div class="content-banner">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-gear"></i>
+                                </div>
+                                <p>View all services!</p>
+                            </div>
+                        </div>
+                        </div>
+                    </button>
+                </div>                  
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <input type="text" name="nome" placeholder="Your name" required>
+                <input type="email" name="email" placeholder="Your email" required>
+                <textarea name="mensagem" placeholder="Write your message" rows="5" required></textarea>
+                <button type="submit" class="ctaForms">Get in touch</button>
+            </form>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer id="footer">
+        <div id="addressContainer">
+            <div class="address">
+                <p style="font-weight: bold; color: var(--accent); font-size: 20px;">BRAZIL</p>
+                <p> Commercial - Nicolar Mermier | <a href="https://wa.me/+5521997421540" target="_blank">+55 21 99742-1540</a></p>
+                <p> Administrative - Marcos Brandão | <a href="https://wa.me/+5521972739181" target="_blank">+55 21 97273-9181</a></p>
+                <p> Technical - Samuel Sampaio | <a href="https://wa.me/+5521951111863" target="_blank">+55 21 95111-1863</a></p>
+            </div>
+            <div class="address">
+                <p style="font-weight: bold; color: var(--accent); font-size: 20px;">SWITZERLAND</p>
+                <p>CEO - Andreas Nicolaysen | <a href="https://wa.me/+41763950008" target="_blank">+41 76 395 00 08</a></p>
+            </div>
+        </div>
+
+        <div id="links">
+            <a href="https://wa.me/+5521951111863?text=Hello%20Samuel,%20I'm%20interested%20in%20working%20at%20WWOTEC!." target="_blank">Work with us!</a>
+            <a href="privacypolicy.pdf" target="_blank">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <div id="floating-button">
+        <a href="https://wa.me/+41763950008" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> <span class="button-text">Talk with us!</span>
+        </a>
+    </div>
+    
+    <script src="src/js/menu.js"></script>
+    <script type="module">
+         import { goToAllServices } from './src/js/navigation.js'; // ou onde estiver
+
+        let selectedCode = null;
+
+        window.myfunction = function () {
+            goToAllServices(selectedCode);
+        };
+
+        // isso pode ser atualizado quando o botão da lista for clicado
+        import { loadServices, loadServicesByProblems } from './src/js/services.js';
+        import { renderList, renderCards } from './src/js/render.js';
+        import { setupListClickListener } from './src/js/listeners.js';
+
+        const serviceListEl = document.getElementById('serviceList');
+        const cardContainer = document.getElementById('service-cardbox');
+
+        function setSelectedCode(code) {
+            selectedCode = code;
+        }
+
+        async function init() {
+            const services = await loadServices();
+            renderList(serviceListEl, services);
+
+            const servicesByProblems = await loadServicesByProblems();
+            renderCards(cardContainer, servicesByProblems, services[0].code);
+            setSelectedCode(services[0].code);
+
+            setupListClickListener(serviceListEl, servicesByProblems, renderCards, cardContainer, setSelectedCode);
+        }
+
+        init();
+    </script>
+
+      
+</body>
 </html>

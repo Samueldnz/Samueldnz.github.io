@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - WWOTEC</title>
+    <link rel="shortcut icon" href="../midia/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style/root.css">
+    <link rel="stylesheet" href="/src/style/nav.css">
+    <link rel="stylesheet" href="/src/style/forms.css">
+    <link rel="stylesheet" href="/src/style/footer.css">
+    <link rel="stylesheet" href="/src/style/service-list.css">
+    <link rel="stylesheet" href="/src/style/service-card.css">
+    <link rel="stylesheet" href="/src/style/banner.css">
+    <link rel="stylesheet" href="/src/style/main.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navMenu" class="backgroundToggle">
+        <div id="logo">
+            <a href="/index.html">
+                <img src="/src/midia/logo.png" alt="WWOTEC Logo">
+                <span id="company-name">WWOTEC</span>
+            </a>
+        </div>
+        <div id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="menu">
+          <li class="navItem"><a href="../../index.html#section-services">Home</a></li>
+          <li class="navItem"><a href="../pages/aboutUs.html">About Us</a></li>
+          <li class="navItem"><a href="#section-allServices">Services</a></li>
+          <li class="navItem"><a href="../../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        
+        <section id="section-allServices">
+            <h2>Services</h2>
+            <div class="section-product">
+                <div>
+                  <ul class="service-list" id="allServiceList"></ul>
+                </div>
+                <div id="allService-cardbox" class="cardBox"></div>
+            </div>
+        </section>
+
+        
+        
+        <!-- Footer -->
+        <footer id="footer">
+            <div id="addressContainer">
+                <div class="address">
+                    <p style="font-weight: bold; color: var(--accent); font-size: 20px;">BRAZIL</p>
+                    <p> Commercial - Nicolar Mermier | <a href="https://wa.me/+5521997421540" target="_blank">+55 21 99742-1540</a></p>
+                    <p> Administrative - Marcos Brandão | <a href="https://wa.me/+5521972739181" target="_blank">+55 21 97273-9181</a></p>
+                    <p> Technical - Samuel Sampaio | <a href="https://wa.me/+5521951111863" target="_blank">+55 21 95111-1863</a></p>
+                </div>
+                <div class="address">
+                    <p style="font-weight: bold; color: var(--accent); font-size: 20px;">SWITZERLAND</p>
+                    <p>CEO - Andreas Nicolaysen | <a href="https://wa.me/+41763950008" target="_blank">+41 76 395 00 08</a></p>
+                </div>
+            </div>
+
+            <div id="links">
+                <a href="https://wa.me/+5521951111863?text=Hello%20Samuel,%20I'm%20interested%20in%20working%20at%20WWOTEC!." target="_blank">Work with us!</a>
+                <a href="privacypolicy.pdf" target="_blank">Privacy Policy</a>
+            </div>
+        </footer>
+
+        <div id="floating-button">
+            <a href="https://wa.me/+41763950008" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> <span class="button-text">Talk with us!</span>
+            </a>
+        </div>
+    </main>
+
+    <script src="/src/js/menu.js"></script>
+    <script>
+        let services = null;
+        let servicesByProblems = null;
+      
+        async function loadServices() {
+          const response = await fetch('../js/services.json');
+          if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+          return await response.json();
+        }
+      
+        async function loadServicesByProblems() {
+          const response = await fetch('../js/servicesByProblems.json');
+          if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+          return await response.json();
+        }
+      
+        function renderServiceList(serviceListEl) {
+          services.forEach((service, index) => {
+            const item = document.createElement('li');
+      
+            item.innerHTML = `
+              <button class="service-button ${index === 0 ? 'selected' : ''}" data-service="${service.code}">
+                <i class="${service.icon} service-icon" aria-hidden="true"></i>
+                <span class="service-name">${service.name}</span>
+                <span class="arrow">›</span>
+              </button>
+            `;
+      
+            serviceListEl.appendChild(item);
+          });
+        }
+      
+        function renderServiceCards(serviceCode, cardContainer, limitFromCaller = null) {
+          cardContainer.innerHTML = "";
+      
+          const limitAttr = cardContainer.getAttribute("data-limit");
+          const limit = limitFromCaller ?? (limitAttr ? parseInt(limitAttr, 10) : 0);
+      
+          const items = servicesByProblems[serviceCode] || [];
+          const cardsToRender = limit ? items.slice(0, limit) : items;
+      
+          cardsToRender.forEach(service => {
+            const card = document.createElement("div");
+            card.className = "service-type-card";
+      
+            card.innerHTML = `
+              <div class="icon-wrapper">
+                <i class="${service.icon} service-type-icon" aria-hidden="true"></i>
+              </div>
+              <h3>${service.name}</h3>
+              <p>${service.description}</p>
+            `;
+      
+            cardContainer.appendChild(card);
+          });
+        }
+      
+        async function init() {
+          // Carrega os dados
+          services = await loadServices();
+          servicesByProblems = await loadServicesByProblems();
+      
+          const serviceListEl = document.getElementById('allServiceList');
+          const cardContainer = document.getElementById("allService-cardbox");
+      
+          // Renderiza a lista lateral
+          renderServiceList(serviceListEl);
+      
+          // Renderiza os cards iniciais
+          if (services && services.length > 0) {
+            renderServiceCards(services[0].code, cardContainer);
+          }
+      
+          // Alterna os cards ao clicar em um botão
+          serviceListEl.addEventListener('click', function (e) {
+            const button = e.target.closest('.service-button');
+            if (!button) return;
+      
+            // Remove seleção anterior
+            document.querySelectorAll('.service-button').forEach(btn => btn.classList.remove('selected'));
+      
+            // Marca como selecionado
+            button.classList.add('selected');
+      
+            const selectedCode = button.getAttribute('data-service');
+      
+            // Atualiza os cards com base no botão clicado
+            renderServiceCards(selectedCode, cardContainer);
+          });
+        }
+      
+        // Inicia tudo quando a página carrega
+        init();
+
+        window.addEventListener('load', () => {
+            const section = document.getElementById("section-allServices");
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" }); // rola suavemente
+            }
+        });
+
+      </script>
+      
+      
+      
+    
+
+</body>
+</html>

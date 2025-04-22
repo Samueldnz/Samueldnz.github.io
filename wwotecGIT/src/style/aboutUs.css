@@ -1,0 +1,121 @@
+:root {
+    --card-height: 350px;
+    --card-width: calc(var(--card-height) / 1.5);
+}
+
+section { padding: 3rem 2rem 0 2rem; max-width: 1366px; margin: auto; }
+
+
+h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+
+#sobre p{
+    color: rgb(186, 180, 180);
+}
+  
+.team-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 2rem;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+}
+
+/* ==== CARD 3D ESTILO ==== */
+
+.cardTeam {
+    width: var(--card-width);
+    height: var(--card-height);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 20px;
+    perspective: 2500px;
+    border-radius: 5px;
+}
+
+.cover-imageTeam {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.wrapperTeam {
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    border-radius: 5px;
+}
+
+.cardTeam:hover .wrapperTeam {
+    transform: perspective(900px) translateY(-5%) rotateX(25deg);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapperTeam::before,
+.wrapperTeam::after {
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+    border-radius: 5px;
+}
+
+.wrapperTeam::before {
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(to top, transparent 46%, rgba(12, 13, 19, 0.5) 68%, rgba(12, 13, 19) 97%);
+}
+
+.wrapperTeam::after {
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(to bottom, transparent 46%, rgba(12, 13, 19, 0.5) 68%, rgba(12, 13, 19) 97%);
+}
+
+.cardTeam:hover .wrapperTeam::before,
+.cardTeam:hover .wrapperTeam::after {
+    opacity: 1;
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.cardTeam:hover .wrapperTeam::after {
+    height: 120px;
+    
+}
+
+.titleTeam {
+    width: 100%;
+    transition: transform 0.5s;
+    z-index: 10;
+}
+
+.cardTeam:hover .titleTeam {
+    transform: translate3d(0%, -50px, 100px);
+}
+
+.characterTeam {
+    width: 90%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+}
+
+.cardTeam:hover .characterTeam {
+    opacity: 1;
+    transform: translate3d(0%, -30%, 100px);
+}

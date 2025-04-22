@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equipe - WWOTEC</title>
+  <link rel="shortcut icon" href="../midia/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style/root.css">
+  <link rel="stylesheet" href="../style/nav.css">
+  <link rel="stylesheet" href="../style/aboutUs.css">
+  <link rel="stylesheet" href="../style/footer.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav id="navMenu" class="backgroundToggle">
+    <div id="logo">
+        <a href="/index.html">
+            <img src="../midia/logo.png" alt="WWOTEC Logo">
+            <span id="company-name">WWOTEC</span>
+        </a>
+    </div>
+    <div id="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="nav-links" id="menu">
+      <li class="navItem"><a href="../../index.html#section-services">Home</a></li>
+      <li class="navItem"><a href="#sobre">About Us</a></li>
+      <li class="navItem"><a href="../pages/allServices.html#section-allServices">Services</a></li>
+      <li class="navItem"><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+</nav>
+
+  <main>
+    <section id="sobre">
+        <h2>About Us</h2>
+        <p style="text-align: justify; max-width: 800px; margin:auto; text-indent: 30px;">
+            We are specialists in strategic outsourcing. Our mission is to deliver customized solutions with excellence, connecting technology, industry, and business to transform results. We operate with customer focus, agility in execution, and a commitment to success. 
+        </p>
+        <p style="text-align: justify; max-width: 800px; margin:auto; text-indent: 30px; margin-top: 10px;">
+          What sets us apart is our highly skilled and multidisciplinary team—professionals who combine deep technical knowledge with a passion for innovation. With a customer-centric mindset, we operate with agility, precision, and an unwavering commitment to your success. From planning to execution, we work side by side with our clients to ensure impactful outcomes and long-term value.
+      </p>
+    </section>
+    <section class="team-section">
+      <div class="team-container" id="team">
+        <!-- Cards são adicionados via script.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div id="addressContainer">
+        <div class="address">
+            <p style="font-weight: bold; color: var(--accent); font-size: 20px;">BRAZIL</p>
+            <p> Commercial - Nicolar Mermier | <a href="https://wa.me/+5521997421540" target="_blank">+55 21 99742-1540</a></p>
+            <p> Administrative - Marcos Brandão | <a href="https://wa.me/+5521972739181" target="_blank">+55 21 97273-9181</a></p>
+            <p> Technical - Samuel Sampaio | <a href="https://wa.me/+5521951111863" target="_blank">+55 21 95111-1863</a></p>
+        </div>
+        <div class="address">
+            <p style="font-weight: bold; color: var(--accent); font-size: 20px;">SWITZERLAND</p>
+            <p>CEO - Andreas Nicolaysen | <a href="https://wa.me/+41763950008" target="_blank">+41 76 395 00 08</a></p>
+        </div>
+    </div>
+
+    <div id="links">
+        <a href="https://wa.me/+5521951111863?text=Hello%20Samuel,%20I'm%20interested%20in%20working%20at%20WWOTEC!." target="_blank">Work with us!</a>
+        <a href="privacypolicy.pdf" target="_blank">Privacy Policy</a>
+    </div>
+</footer>
+
+<div id="floating-button">
+    <a href="https://wa.me/+41763950008" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> <span class="button-text">Talk with us!</span>
+    </a>
+</div>
+
+  <script>
+    const equipe = [
+  {
+    nome: "Samuel Sampaio Diniz",
+    cargo: "Developer",
+    capa: "../midia/samuel-cover.jpg",
+    titulo: "../midia/samuel-title.png",
+    personagem: "../midia/samuel-character.webp",
+    href: "./portfolioSamuel.html"
+  },
+  {
+    nome: "Nicolas Mermier",
+    cargo: "Engenieer",
+    capa: "../midia/nicolas-cover.jpg",
+    titulo: "../midia/nicolas-title.png",
+    personagem: "../midia/nicolas-character.png",
+    href: "./portfolioNicolas.html"
+  },
+  {
+    nome: "Marcos Brandão",
+    cargo: "Manager",
+    capa: "../midia/marcos-cover.jpg",
+    titulo: "../midia/marcos-title.png",
+    personagem: "../midia/marcos-character.webp",
+    href: "./portfolioMarcos.html"
+  },
+  {
+    nome: "Andreas Nicolaysen",
+    cargo: "CEO",
+    capa: "../midia/samuel-cover.jpg",
+    titulo: "../midia/andreas-title.png",
+    personagem: "../midia/dark_rider-character.webp",
+    href: "./portfolioAndreas.html"
+  }
+];
+
+const container = document.getElementById("team");
+
+equipe.forEach(membro => {
+  const card = document.createElement("a");
+  card.href = "#";
+  card.innerHTML = `
+  <a href="${membro.href}">
+    <div class="cardTeam">
+      <div class="wrapperTeam">
+        <img src="${membro.capa}" class="cover-imageTeam" />
+      </div>
+      <img src="${membro.titulo}" class="titleTeam" alt="${membro.nome}" />
+      <img src="${membro.personagem}" class="characterTeam" alt="${membro.nome}" />
+    </div>
+  </a>
+  `;
+  container.appendChild(card);
+});
+
+  </script>
+  <script src="../js/menu.js"></script>
+</body>
+</html>

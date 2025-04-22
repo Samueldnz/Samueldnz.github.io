@@ -1,0 +1,7 @@
+[
+    {"name": "Technological Solutions", "code": "st", "icon": "fa-solid fa-desktop" },
+    { "name": "Industrial Projects", "code": "pi", "icon": "fa-solid fa-industry" },
+    { "name": "Commercial Representation", "code": "crc", "icon": "fa-solid fa-briefcase" },
+    { "name": "Digital Billing", "code": "db", "icon": "fa-solid fa-file-invoice-dollar" }
+]
+  

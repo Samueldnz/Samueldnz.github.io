@@ -1,0 +1,54 @@
+.cardBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: auto 0;
+}
+
+.service-type-card {
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    max-width: 300px;
+    height: 250px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.service-type-card:hover{
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+}
+
+.service-type-icon {
+    color: var(--accent);
+    font-size: 2.5rem;
+}
+
+.service-type-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.service-type-card p {
+    font-size: 14px;
+    color: rgb(186, 180, 180);
+    line-height: 1.4;
+}
